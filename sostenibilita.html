@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sostenibilità — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="GreenFabrics: tessuti in cotone rigenerato, certificati GRS e prodotti interamente in Italia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-header="over" class="page-green">
+
+<main>
+  <!-- HERO: fondo verde, si ferma per qualche schermata mentre le parole giganti si alternano; davanti un nastro 3D di velluto (lo stesso pelo della home) che si allarga e si stende a ogni parola (ribbon.js, rif. protection.gr) -->
+  <section class="ghero" data-hero data-ribbon>
+    <h1 class="sr-only">Sostenibilità: GreenFabrics, cotone rigenerato, italiano e certificato</h1>
+    <p class="ghero__words" aria-hidden="true"><span>rigenerato.</span><span>italiano.</span><span>certificato.</span><span>GreenFabrics.</span></p>
+    <canvas class="ghero__ribbon" aria-hidden="true"></canvas>
+    <div class="ghero__foot container">
+      <p class="ghero__text">Il cuore della linea GreenFabrics è un filato di cotone rigenerato: tessuto in Italia, certificato GRS.</p>
+      <a href="tessuti.html?collezione=GreenFabrics" class="btn btn--white">Vedi la collezione</a>
+    </div>
+  </section>
+
+  <section class="section container">
+    <p class="statement h2" data-words>Con GreenFabrics arrediamo con meno impatto sull'ambiente: cotone rigenerato, lavorato in Italia, senza rinunciare all'idrorepellenza.</p>
+  </section>
+
+  <!-- NUMERI: righe con il numero gigante che sale con lo scroll (initGnums). Quelli con "da confermare" sono di esempio -->
+  <section class="section container" style="padding-top: 0">
+    <div class="ideas__head">
+      <h2 class="h2" data-split>L'impatto, in numeri</h2>
+      <p class="lead mute" data-reveal>Quello che si può misurare, dal filo al magazzino.</p>
+    </div>
+    <div class="gnums">
+      <div class="gnum" data-gnum>
+        <p class="gnum__n"><span data-count="100">100</span>%</p>
+        <div class="gnum__txt"><h3 class="gnum__title">Cotone rigenerato</h3><p>Il filato della linea GreenFabrics è cotone rigenerato al 100%.</p></div>
+      </div>
+      <div class="gnum" data-gnum>
+        <p class="gnum__n"><span data-count="7">7</span></p>
+        <div class="gnum__txt"><h3 class="gnum__title">Articoli GreenFabrics</h3><p>Alma, Isoppo, Bruce e Chopper, con i coordinati 1220, 1221 e 1266.</p></div>
+      </div>
+      <div class="gnum" data-gnum>
+        <p class="gnum__n"><span data-count="0,5">0,5</span> m</p>
+        <div class="gnum__txt"><h3 class="gnum__title">Taglio minimo</h3><p>Si ordina anche mezzo metro: si compra solo il tessuto che serve, senza scorte che restano in magazzino.</p></div>
+      </div>
+      <div class="gnum" data-gnum>
+        <p class="gnum__n"><span data-count="35">35</span>%</p>
+        <div class="gnum__txt"><h3 class="gnum__title">Energia dal fotovoltaico <span class="tbd">da confermare</span></h3><p>La parte del fabbisogno del magazzino di Noci coperta dai pannelli solari.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAL FILO AL DIVANO: sezione ferma; a ogni tappa la foto si rimpicciolisce al centro e dietro si allarga la successiva,
+       come uno zoom all'indietro dal filo alla seduta (pages.js initGsteps) -->
+  <section class="gsteps" data-gsteps>
+    <div class="gsteps__frame"><img src="assets/img/prodotti/bruce.jpg" alt="Tessuto Bruce da vicino" loading="lazy"></div>
+    <div class="gsteps__frame"><img src="assets/img/prodotti/alma.jpg" alt="Tessuto Alma drappeggiato" loading="lazy"></div>
+    <div class="gsteps__frame"><img src="assets/img/mood-board3.jpg" alt="Campioni Bruce, Chopper e Alma accostati" loading="lazy"></div>
+    <div class="gsteps__frame"><img src="assets/img/green-fabrics-naturel.jpg" alt="Poltrona rivestita in un tessuto GreenFabrics" loading="lazy"></div>
+    <p class="gsteps__heading">Dal filo al divano</p>
+    <div class="gsteps__copy">
+      <div class="gsteps__text"><h2 class="gsteps__name">Il filo</h2><p>Il cuore della linea GreenFabrics è un filato di cotone rigenerato.</p></div>
+      <div class="gsteps__text"><h2 class="gsteps__name">Il tessuto</h2><p>Tessuto interamente in Italia, con un processo di lavorazione a basso impatto ambientale. E resta idrorepellente.</p></div>
+      <div class="gsteps__text"><h2 class="gsteps__name">La collezione</h2><p>Alma, Isoppo, Bruce e Chopper, con i coordinati, in una vasta scelta di colori.</p></div>
+      <div class="gsteps__text"><h2 class="gsteps__name">La seduta</h2><p>Per divani e poltrone: arredare con meno impatto sull'ambiente.</p></div>
+    </div>
+  </section>
+
+  <!-- TRASPARENZA, CERTIFICAZIONI: tre etichette di tessuto (bordo cucito) che entrano ruotate e si raddrizzano con lo scroll (initGlabels) -->
+  <section class="section container">
+    <div class="ideas__head">
+      <h2 class="h2" data-split>Certificati, non solo dichiarati</h2>
+      <div class="glabels__side" data-reveal><p class="lead mute">Le certificazioni dei nostri tessuti e del nostro modo di lavorare.</p><a href="certificazioni.html" class="link-arrow"><span class="link-arrow__icon"><svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h14M10 1l5 5-5 5"/></svg></span><span class="link-arrow__label">Tutte le certificazioni</span></a></div>
+    </div>
+    <div class="glabels" data-glabels>
+      <article class="glabel glabel--stone" style="--r: -3deg"><p class="glabel__brand">GRS</p><h3 class="glabel__name">Global Recycle Standard</h3><p>Certifica il contenuto riciclato dei tessuti GreenFabrics lungo tutta la filiera.</p></article>
+      <article class="glabel glabel--dark" style="--r: 2deg"><p class="glabel__brand">OEKO&#8209;TEX®</p><h3 class="glabel__name">Standard 100</h3><p>Tessuti testati per l'assenza di sostanze nocive per la salute.</p></article>
+      <article class="glabel glabel--sand" style="--r: -1.5deg"><p class="glabel__brand">231</p><h3 class="glabel__name">Modello 231 e Codice Etico</h3><p>Un modello di organizzazione trasparente verso clienti, collaboratori e ambiente.</p></article>
+    </div>
+  </section>
+
+  <!-- LA COLLEZIONE (rif. xiloteca.it): sezione verde ferma; 26 campioni GreenFabrics veri, immagini piatte rivolte allo
+       schermo, girano lungo una spirale attorno all'asse verticale; con lo scroll la spirale gira e sale e le immagini si
+       piegano e ondeggiano come un liquido secondo la velocità (three.js, pages.js initGfloat). Testo a sinistra, bottone in basso a destra. -->
+  <section class="gfloat" data-gfloat data-swatches="assets/img/prodotti/alma.jpg,assets/img/greenfabrics/isoppo-35.jpg,assets/img/prodotti/bruce.jpg,assets/img/greenfabrics/1221-18.jpg,assets/img/greenfabrics/chopper-19.jpg,assets/img/prodotti/1220.jpg,assets/img/greenfabrics/isoppo-42.jpg,assets/img/prodotti/bruce-12.jpg">
+    <canvas class="gfloat__canvas" aria-hidden="true"></canvas>
+    <div class="gfloat__copy container">
+      <h2 class="gfloat__title" data-split>La collezione<br>GreenFabrics</h2>
+      <p data-reveal>Alma, Isoppo, Bruce e Chopper, con i coordinati 1220, 1221 e 1266: cotone rigenerato, idrorepellente, in una vasta scelta di colori.</p>
+    </div>
+    <div class="gfloat__cta">
+      <p>Cerca per composizione, colore o caratteristica.</p>
+      <a href="tessuti.html?collezione=GreenFabrics" class="btn btn--white">Vedi la collezione</a>
+    </div>
+  </section>
+
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/modules/ribbon.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

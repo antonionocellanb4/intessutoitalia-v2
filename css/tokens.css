@@ -1,0 +1,26 @@
+:root {
+  --c-bg: #fff;
+  --c-paper: #fff;
+  --c-ink: #1d1a17;
+  --c-dark: #151311;    /* sezioni nere e footer */
+  --c-copper: #c3845c;  /* dal logo: solo riempimenti */
+  --c-copper-ink: #9a5f38; /* rame per il testo su chiaro (5.2:1) */
+  --c-sand: #d9d1c7;    /* fondo hero e riquadri */
+  --c-stone: #ebe6df;
+  --c-mute: rgba(29, 26, 23, .72); /* era .58 = 4.3:1, sotto AA */
+  --c-line: rgba(29, 26, 23, .16);
+  --c-line-light: rgba(255, 255, 255, .22);
+
+  --title: "DM Sans", system-ui, -apple-system, sans-serif;
+  --title-weight: 300;  /* titoli più leggeri del testo (400) */
+  --radius: 6px;        /* immagini, campi, badge */
+  --radius-btn: 12px;   /* bottoni e CTA: come le pillole del menu */
+  --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+
+  --gutter: clamp(1rem, 3vw, 3.5rem);
+  --max: 120rem;
+  --section: clamp(5.5rem, 10vw, 10rem);
+  --header-h: 4.5rem;
+
+  --ease: cubic-bezier(.165, .84, .44, 1);
+}

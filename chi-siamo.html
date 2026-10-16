@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chi siamo — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="La storia di intessutoitalia: dagli anni '60 distributori di pelli e tessuti per l'arredamento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-header="over">
+
+<main>
+  <section class="hero hero--about" data-hero data-hero-fx><!-- lamelle all ingresso, carta allo scroll: pages.js initHeroFx -->
+    <div class="hero__media"><img src="assets/img/liberty.jpg" alt="Velluto blu e tessuto grigio a contatto" fetchpriority="high"></div>
+    <div class="hero__content">
+      <h1 class="display hero__about-title" data-split>Tessuti per chi<br>fa divani,<br>dagli anni '60</h1>
+    </div>
+    <p class="hero__text">Nuova Pugliatex distribuisce pelli e tessuti per l'arredamento alle aziende del mobile imbottito, in Italia e all'estero.</p>
+  </section>
+
+  <section class="section container">
+    <p class="statement h2" data-words>Siamo un'azienda italiana specializzata in tessuti per arredamento, certificati, ecosostenibili e di alta qualità.</p>
+  </section>
+
+  <!-- STORIA: a sinistra la foto resta ferma e cambia a ogni capitolo, a destra il testo scorre (pages.js initChapters) -->
+  <section class="chapters container" data-chapters>
+    <div class="chapters__media">
+      <div class="chapters__frame">
+        <img src="assets/img/drappeggio.jpg" alt="Tessuti d'arredamento drappeggiati" loading="lazy" class="is-active">
+        <img src="assets/img/tessuti.jpg" alt="Campioni di tessuto impilati" loading="lazy">
+        <img src="assets/img/pelle.jpg" alt="Pelle per arredamento, dettaglio della grana" loading="lazy">
+        <img src="assets/img/copertina-green-fabrics.jpg" alt="Divano rivestito in un tessuto GreenFabrics" loading="lazy">
+        <p class="chapters__era" data-chapter-era>Anni '60</p>
+      </div>
+    </div>
+    <div class="chapters__list">
+      <article class="chapter" data-chapter="0">
+        <p class="caps mute">01 · Anni '60</p>
+        <h3 class="chapter__title">Il boom del mobile imbottito</h3>
+        <p>La nostra storia affonda le radici nel boom economico degli anni '60: ai piccoli produttori artigianali di salotti cominciano ad affiancarsi i primi giganti del mobile imbottito.</p>
+      </article>
+      <article class="chapter" data-chapter="1">
+        <p class="caps mute">02 · L'intuizione</p>
+        <h3 class="chapter__title">Un magazzino just in time</h3>
+        <p>Piero Marinuzzi allestisce un magazzino di pelli e tessuti d'arredamento per le aziende che non devono ordinare grandi quantitativi: trovano subito il materiale, nella quantità che serve.</p>
+      </article>
+      <article class="chapter" data-chapter="2">
+        <p class="caps mute">03 · La crescita</p>
+        <h3 class="chapter__title">Pelli, finte pelli e tessuti</h3>
+        <p>Con la passione della famiglia Marinuzzi e dei suoi collaboratori l'azienda cresce e si specializza in pelli, finte pelli e tessuti, sia normali che ignifughi.</p>
+      </article>
+      <article class="chapter" data-chapter="3">
+        <p class="caps mute">04 · Oggi</p>
+        <h3 class="chapter__title">Uno dei leader in Italia</h3>
+        <p>L'esperienza in tutti i tipi di rivestimento e la ricerca continua hanno reso inpelleitalia &amp; intessutoitalia uno dei leader italiani nella distribuzione di tessuti per il mobile imbottito.</p>
+        <a href="tessuti.html" class="link-arrow"><span class="link-arrow__icon"><svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h14M10 1l5 5-5 5"/></svg></span><span class="link-arrow__label">Scopri i tessuti</span></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- RICERCA E SVILUPPO 1/2: sezione agganciata a tutto schermo, la foto zooma nella trama e i tre test passano al centro -->
+  <section class="rnd deep" data-deep>
+    <img class="deep__img" src="assets/img/drappeggio.jpg" alt="Trama di tessuti d'arredamento, da vicino" loading="lazy">
+    <div class="deep__copy">
+      <div class="deep__phase" data-phase>
+        <p class="caps">Ricerca e sviluppo</p>
+        <h2 class="deep__title">Provati prima di entrare in collezione</h2>
+        <p class="deep__text">Ogni stagione selezioniamo nuovi articoli presso i migliori produttori e li testiamo, prima di proporli ai nostri clienti.</p>
+      </div>
+        <div class="deep__phase" data-phase>
+          <p class="deep__big">60.000</p>
+          <p class="deep__text">Quanto il tessuto regge allo strofinio di tutti i giorni. Aragon supera i 60.000 cicli.</p>
+        </div>
+        <div class="deep__phase" data-phase>
+          <p class="deep__big">Mano</p>
+          <p class="deep__text">Morbidezza, compattezza, il modo in cui il tessuto cade sulla seduta.</p>
+        </div>
+        <div class="deep__phase" data-phase>
+          <p class="deep__big">Colore</p>
+          <p class="deep__text">Quanto il colore resiste alla luce e al tempo senza sbiadire.</p>
+        </div>
+    </div>
+  </section>
+
+  <!-- RICERCA E SVILUPPO 2/2: le tre parole giganti riempite di tessuto, scorrono in orizzontale con lo scroll -->
+  <!-- nascosta su richiesta (14 ott): resta solo "dentro il tessuto" -->
+  <section class="section fwords" data-fwords hidden>
+    <div class="fwords__list">
+      <div class="fword" data-fword>
+        <p class="fword__word" style="background-image: url(assets/img/dsc02314.jpg)">Resistenza</p>
+        <p class="fword__line">Quanto il tessuto regge allo strofinio di tutti i giorni. Aragon supera i 60.000 cicli.</p>
+      </div>
+      <div class="fword fword--right" data-fword>
+        <p class="fword__word" style="background-image: url(assets/img/drappeggio.jpg)">Mano</p>
+        <p class="fword__line">Morbidezza, compattezza, il modo in cui il tessuto cade sulla seduta.</p>
+      </div>
+      <div class="fword" data-fword>
+        <p class="fword__word" style="background-image: url(assets/img/aragon/red.jpg)">Colore</p>
+        <p class="fword__line">Quanto il colore resiste alla luce e al tempo senza sbiadire.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLEZIONI: due blocchi a tutta foto, con i link veri -->
+  <section class="section container">
+    <div class="ideas__head">
+      <h2 class="h2" data-split>Tessuti innovativi</h2>
+      <p class="lead mute" data-reveal>La gamma si aggiorna di continuo: dai tessuti antimacchia ai riciclati.</p>
+    </div>
+    <div class="duo" data-stagger>
+      <a href="tessuti.html?collezione=GreenFabrics" class="duo__card">
+        <img src="assets/img/green-fabrics-naturel.jpg" alt="Poltrona rivestita in un tessuto GreenFabrics" loading="lazy">
+        <div class="duo__text"><p class="caps">Il nostro impegno sostenibile</p><h3 class="duo__title">GreenFabrics</h3><p>Tessuti realizzati con fibre riciclate certificate GRS, per arredare con meno impatto sull'ambiente.</p><span class="duo__link">Vedi la collezione</span></div>
+      </a>
+      <a href="aquaclean.html" class="duo__card">
+        <img src="assets/img/aquaclean/oasis.jpg" alt="Tessuto antimacchia Aquaclean" loading="lazy">
+        <div class="duo__text"><p class="caps">Antimacchia</p><h3 class="duo__title">Aquaclean</h3><p>Tessuti antimacchia: la maggior parte delle macchie va via con un po' d'acqua.</p><span class="duo__link">Vedi la collezione</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CHIUSURA: lo showroom -->
+  <section class="about-closing">
+    <img src="assets/img/naturel3.jpg" alt="" loading="lazy">
+    <div class="about-closing__copy container">
+      <p class="caps">Showroom · Noci (BA)</p>
+      <h2 class="about-closing__title">Vieni a toccarli con mano.</h2>
+      <p>Centinaia di tessuti, pelli e microfibre da vedere dal vivo, con il nostro team ad aiutarti a scegliere.</p>
+      <div class="hero__actions"><a href="showroom.html" class="btn btn--white">Visita lo showroom</a><a href="contatti.html" class="btn btn--light">Contattaci</a></div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

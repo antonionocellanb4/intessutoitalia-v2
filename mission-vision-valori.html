@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mission, Vision e Valori — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="Mission, vision e valori di intessutoitalia, Nuova Pugliatex S.r.l.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-header="over">
+
+<main>
+  <section class="hero hero--about" data-hero data-hero-fx><!-- lamelle all ingresso, carta allo scroll: pages.js initHeroFx -->
+    <div class="hero__media"><img src="assets/img/dsc02314.jpg" alt="Velluto blu in primo piano" fetchpriority="high"></div>
+    <div class="hero__content">
+      <h1 class="display hero__about-title" data-split>Mission, Vision<br>e Valori</h1>
+    </div>
+    <p class="hero__text">Quello che facciamo ogni giorno, dove vogliamo arrivare e le persone che lo rendono possibile.</p>
+  </section>
+
+  <!-- MISSION: la frase si accende parola per parola con lo scroll -->
+  <section class="section container mvv-mission">
+    <p class="caps mute">La nostra Mission</p>
+    <p class="statement h2" data-words>Offrire alle aziende dell'imbottito pelli e tessuti di qualità, pronti quando servono e nella quantità che serve.</p>
+    <p class="mvv-mission__text" data-reveal>Siamo il partner just in time di produttori, tappezzieri e professionisti dell'arredo: un magazzino sempre fornito, consulenza nella scelta dei materiali e spedizioni rapide anche per piccoli metraggi.</p>
+  </section>
+
+  <!-- VISION: la sezione si ferma su bianco con una foto piccola al centro e il titolo diviso sopra e sotto; con lo scroll la
+       foto si apre a tutto schermo, le due righe si allontanano e sulla foto compare il testo (pages.js initVzoom) -->
+  <section class="vzoom" data-vzoom>
+    <div class="vzoom__img"><img src="assets/img/green-fabrics-naturel.jpg" alt="Poltrona rivestita in un tessuto GreenFabrics" loading="lazy"></div>
+    <p class="vzoom__line vzoom__line--top" aria-hidden="true">Un punto di riferimento</p>
+    <p class="vzoom__line vzoom__line--bottom" aria-hidden="true">per chi dà forma agli spazi.</p>
+    <div class="vzoom__copy container">
+      <p class="caps">La nostra Vision</p>
+      <h2 class="vzoom__title">Un punto di riferimento per chi dà forma agli spazi.</h2>
+      <p>Vogliamo essere il primo nome a cui pensano designer, aziende e hospitality quando cercano un rivestimento: per la varietà della gamma, per l'innovazione dei materiali e per un servizio che semplifica il lavoro.</p>
+    </div>
+  </section>
+
+  <!-- VALORI: righe a tutta larghezza; quando la parola sale oltre il 40% dello schermo la riga si apre (foto + testo) e
+       la parola si scurisce. Le righe aperte restano aperte (pages.js initVrows). Su telefono sono già aperte. -->
+  <section class="section container vrows" data-vrows>
+    <div class="ideas__head">
+      <h2 class="h2" data-split>I nostri valori</h2>
+      <p class="lead mute" data-reveal>I principi che guidano le nostre scelte, dalla selezione dei tessuti al rapporto con i clienti.</p>
+    </div>
+      <article class="vrow" data-vrow>
+        <h3 class="vrow__word">Qualità</h3>
+        <div class="vrow__panel"><div class="vrow__inner"><div class="vrow__content">
+          <div class="vrow__media"><img src="assets/img/tessuti.jpg" alt="Campioni di tessuto impilati" loading="lazy"></div>
+          <p>Ricerchiamo le migliori pelli, finte pelli, tessuti e microfibre disponibili sul mercato, per rivestire i vostri divani con qualità ed eleganza.</p>
+        </div></div></div>
+      </article>
+      <article class="vrow" data-vrow>
+        <h3 class="vrow__word">Passione</h3>
+        <div class="vrow__panel"><div class="vrow__inner"><div class="vrow__content">
+          <div class="vrow__media"><img src="assets/img/drappeggio.jpg" alt="Tessuti d'arredamento drappeggiati" loading="lazy"></div>
+          <p>Amiamo quello che facciamo e cerchiamo sempre di migliorarci per proporre ai nostri clienti i prodotti migliori.</p>
+        </div></div></div>
+      </article>
+      <article class="vrow" data-vrow>
+        <h3 class="vrow__word">Persone</h3>
+        <div class="vrow__panel"><div class="vrow__inner"><div class="vrow__content">
+          <div class="vrow__media"><img src="assets/img/venice.jpg" alt="Divano bianco con cuscino verde in un soggiorno" loading="lazy"></div>
+          <p>Siamo un team affiatato e crediamo che la crescita di un'azienda derivi dalla crescita delle persone che ci lavorano.</p>
+        </div></div></div>
+      </article>
+      <article class="vrow" data-vrow>
+        <h3 class="vrow__word">Responsabilità</h3>
+        <div class="vrow__panel"><div class="vrow__inner"><div class="vrow__content">
+          <div class="vrow__media"><img src="assets/img/copertina-green-fabrics.jpg" alt="Divano rivestito in un tessuto GreenFabrics" loading="lazy"></div>
+          <p>Tessuti certificati, fibre riciclate e un Modello 231 con Codice Etico: lavoriamo in modo trasparente verso clienti, collaboratori e ambiente.</p>
+        </div></div></div>
+      </article>
+  </section>
+
+  <!-- APPROFONDIMENTI -->
+  <section class="section container" style="padding-top: 0">
+    <div class="duo" data-stagger>
+      <a href="certificazioni.html" class="duo__card">
+        <img src="assets/img/dsc01644-1.jpg" alt="Velluto blu e pelle grigia a contatto" loading="lazy">
+        <div class="duo__text"><p class="caps">Trasparenza</p><h3 class="duo__title">Qualità e certificazioni</h3><p>Le certificazioni dei nostri tessuti e i documenti del Modello 231, da scaricare.</p><span class="duo__link">Vedi le certificazioni</span></div>
+      </a>
+      <a href="la-nostra-storia.html" class="duo__card">
+        <img src="assets/img/naturel2-1.jpg" alt="Divano verde oliva in un salotto luminoso" loading="lazy">
+        <div class="duo__text"><p class="caps">Dagli anni '60</p><h3 class="duo__title">La nostra storia</h3><p>Da un magazzino just in time a uno dei leader italiani dei tessuti per il mobile imbottito.</p><span class="duo__link">Leggi la storia</span></div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

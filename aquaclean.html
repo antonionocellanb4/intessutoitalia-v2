@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tessuti Aquaclean — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="Tessuti Aquaclean: le macchie si tolgono con la sola acqua. intessutoitalia è distributore ufficiale.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-header="over">
+
+<main>
+  <!-- HERO: lo spot Aquaclean (solo video, senza audio) in loop dietro il titolo, senza la chiusura col logo
+       (pages.js initHeroVideo). Ingresso a lamelle e uscita in carta: initHeroFx. File scaricato dal canale intessutoitalia: per il sito vero chiedere l'originale al cliente -->
+  <section class="hero hero--about" data-hero data-hero-fx>
+    <div class="hero__media"><img src="assets/img/aquaclean/yt-ug3Z0Ive04I.jpg" alt="Spot Aquaclean: un divano chiaro pulito con un panno" fetchpriority="high"><video class="hero__video" data-hero-video muted playsinline preload="auto" aria-hidden="true"></video></div>
+    <div class="hero__content">
+      <h1 class="display hero__about-title" data-split>Le macchie<br>vanno via<br>con l'acqua</h1>
+    </div>
+    <p class="hero__text">Tessuti Aquaclean: si puliscono con un po' d'acqua, senza detergenti. intessutoitalia è Distributore Ufficiale.</p>
+  </section>
+
+  <!-- COSA TOGLIE: sezione ferma. "Cosa toglie Aquaclean" parte enorme al centro e si posa come titolo, poi passano
+       le macchie al centro una alla volta, enormi, e si sciolgono come inchiostro bagnato
+       (pages.js initAqList) -->
+  <section class="aqa" id="cosa-toglie" data-aqa>
+    <div>
+      <h2 class="aqa__title"><span>Cosa toglie</span> <span>Aquaclean</span></h2>
+      <ul class="aqa__list">
+        <li><span>Vino</span></li><li><span>Inchiostro</span></li><li><span>Sugo</span></li><li><span>Grasso</span></li><li><span>Fango</span></li><li><span>Cioccolato</span></li><li><span>Crema</span></li>
+      </ul>
+    </div>
+    <div class="aqa__side">
+      <p class="aqa__say">Vanno via con un po' d'acqua.</p>
+      <p class="mvv-mission__text">Aquaclean è una protezione avanzata per il rivestimento dei divani che ricopre ogni fibra del tessuto con uno strato molecolare invisibile, evitando che lo sporco penetri al suo interno.</p>
+    </div>
+  </section>
+
+  <!-- COME SI TOGLIE UNA MACCHIA: sezione ferma a tutto schermo su un tessuto chiaro con una macchia di vino (WebGL,
+       drops.js initWash): cadono gocce d'acqua, il vino sale nelle gocce, si tamponano e il tessuto si asciuga -->
+  <section class="wash" data-wash>
+    <div class="wash__media"><img src="assets/img/aquaclean/florence.jpg" alt="Tessuto Aquaclean chiaro con una macchia di vino" loading="lazy"><canvas class="wash__canvas" data-wash-canvas aria-hidden="true"></canvas></div>
+    <div class="wash__copy">
+      <h2 class="wash__title">Come si toglie<br>una macchia</h2>
+      <div>
+        <div class="wash__steps">
+          <div class="wash__step is-active"><p class="wash__n">01 / 03</p><h3 class="wash__name">Bagna</h3><p>Versa un po' d'acqua sulla macchia: resta in superficie, non entra nella fibra.</p></div>
+          <div class="wash__step"><p class="wash__n">02 / 03</p><h3 class="wash__name">Tampona</h3><p>Lo sporco sale nell'acqua: con un panno pulito, senza strofinare, lo porti via.</p></div>
+          <div class="wash__step"><p class="wash__n">03 / 03</p><h3 class="wash__name">Asciuga</h3><p>Il tessuto torna com'era, senza aloni e senza detergenti.</p></div>
+        </div>
+        <div class="wash__bar" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO: la sezione si ferma su bianco e i video scorrono in orizzontale; quello al centro è il più grande
+       (pages.js initVreel). Su telefono: video impilati, il successivo scorre sopra il precedente -->
+  <section class="vreel" id="video" data-vreel>
+    <div class="vreel__track">
+      <div class="vreel__intro">
+        <h2 class="vreel__title">Aquaclean<br>in azione</h2>
+        <p>Sei video per vederlo all'opera: dal vino sul divano agli animali di casa, fino alla tecnologia che c'è dietro.</p>
+      </div>
+      <article class="vreel__card">
+        <button type="button" class="video" data-yt="ug3Z0Ive04I" aria-label="Riproduci: Il tessuto che si pulisce solo con acqua"><img src="assets/img/aquaclean/yt-ug3Z0Ive04I.jpg" alt="" loading="lazy"><span class="video__play"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M0 0v14l12-7z"/></svg></span></button>
+        <p class="vreel__meta"><span>01</span>Il tessuto che si pulisce solo con acqua</p>
+      </article>
+      <article class="vreel__card">
+        <button type="button" class="video" data-yt="6OsbyrGTOQI" aria-label="Riproduci: Tecnologia Aquaclean: come funziona?"><img src="assets/img/aquaclean/yt-6OsbyrGTOQI.jpg" alt="" loading="lazy"><span class="video__play"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M0 0v14l12-7z"/></svg></span></button>
+        <p class="vreel__meta"><span>02</span>Tecnologia Aquaclean: come funziona?</p>
+      </article>
+      <article class="vreel__card">
+        <button type="button" class="video" data-yt="eJLv3GjNTQc" aria-label="Riproduci: Il tessuto amico degli animali"><img src="assets/img/aquaclean/yt-eJLv3GjNTQc.jpg" alt="" loading="lazy"><span class="video__play"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M0 0v14l12-7z"/></svg></span></button>
+        <p class="vreel__meta"><span>03</span>Il tessuto amico degli animali</p>
+      </article>
+      <article class="vreel__card">
+        <button type="button" class="video" data-yt="Ylbslc77PJk" aria-label="Riproduci: Tessuti idrorepellenti o Aquaclean?"><img src="assets/img/aquaclean/yt-Ylbslc77PJk.jpg" alt="" loading="lazy"><span class="video__play"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M0 0v14l12-7z"/></svg></span></button>
+        <p class="vreel__meta"><span>04</span>Tessuti idrorepellenti o Aquaclean?</p>
+      </article>
+      <article class="vreel__card">
+        <button type="button" class="video" data-yt="miFu100dcng" aria-label="Riproduci: Goditi il tuo divano"><img src="assets/img/aquaclean/yt-miFu100dcng.jpg" alt="" loading="lazy"><span class="video__play"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M0 0v14l12-7z"/></svg></span></button>
+        <p class="vreel__meta"><span>05</span>Goditi il tuo divano</p>
+      </article>
+      <article class="vreel__card">
+        <button type="button" class="video" data-yt="2f9L_dPhfg4" aria-label="Riproduci: Spot Aquaclean"><img src="assets/img/aquaclean/yt-2f9L_dPhfg4.jpg" alt="" loading="lazy"><span class="video__play"><svg viewBox="0 0 12 14" fill="currentColor"><path d="M0 0v14l12-7z"/></svg></span></button>
+        <p class="vreel__meta"><span>06</span>Spot Aquaclean</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- COLLEZIONI, effetto "lamelle" (rif. elementis.co): sezione ferma, foto a tutto schermo e carta al centro; a ogni
+       collezione la foto nuova entra a strisce orizzontali di spessore diverso, dall'alto, sia sullo sfondo sia nella
+       carta (lì ingrandita sulla trama). Testi DI ESEMPIO (pages.js initBlinds) -->
+  <section class="blinds" id="collezioni" data-blinds>
+    <div class="blinds__stack" data-blinds-stack aria-hidden="true">
+        <div class="blinds__layer"><img src="assets/img/aquaclean/alboran.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/florence.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/bison.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/andros.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/oasis.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/mykonos.jpg" alt="" loading="lazy"></div>
+    </div>
+    <h2 class="blinds__title">Le collezioni<br>Aquaclean</h2>
+    <div class="blinds__card">
+      <p class="blinds__count"><span><span data-blinds-n>01</span> — 06</span><span>Antimacchia</span></p>
+      <div class="blinds__stack blinds__media" data-blinds-stack aria-hidden="true">
+        <div class="blinds__layer"><img src="assets/img/aquaclean/alboran.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/florence.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/bison.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/andros.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/oasis.jpg" alt="" loading="lazy"></div>
+        <div class="blinds__layer"><img src="assets/img/aquaclean/mykonos.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div class="blinds__texts">
+        <article class="blinds__text">
+          <h3 class="blinds__name">Alboran</h3>
+          <p>Trama mélange dalla mano morbida, nei toni dell'azzurro e del blu.</p>
+          <a href="scheda-prodotto.html">Vedi il tessuto</a>
+        </article>
+        <article class="blinds__text">
+          <h3 class="blinds__name">Florence</h3>
+          <p>Tinta unita chiara dalla trama compatta: morbida, luminosa, facile da abbinare.</p>
+          <a href="scheda-prodotto.html">Vedi il tessuto</a>
+        </article>
+        <article class="blinds__text">
+          <h3 class="blinds__name">Bison</h3>
+          <p>Effetto scamosciato caldo al tatto, nei toni del cuoio e del caramello.</p>
+          <a href="scheda-prodotto.html">Vedi il tessuto</a>
+        </article>
+        <article class="blinds__text">
+          <h3 class="blinds__name">Andros</h3>
+          <p>Un piccolo disegno a grana di riso, fitto e regolare: il classico che non stanca.</p>
+          <a href="scheda-prodotto.html">Vedi il tessuto</a>
+        </article>
+        <article class="blinds__text">
+          <h3 class="blinds__name">Oasis</h3>
+          <p>Velluto liscio a pelo corto, in colori pieni e brillanti.</p>
+          <a href="scheda-prodotto.html">Vedi il tessuto</a>
+        </article>
+        <article class="blinds__text">
+          <h3 class="blinds__name">Mykonos</h3>
+          <p>Bouclé leggero bicolore, dall'aspetto naturale.</p>
+          <a href="scheda-prodotto.html">Vedi il tessuto</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIUSURA su bianco -->
+  <section class="section container story-end">
+    <h2 class="story-end__title" data-split>Tutti i tessuti<br>Aquaclean</h2>
+    <div class="story-end__side" data-reveal>
+      <p>Cerca per colore, composizione o caratteristica, oppure richiedi i campioni da toccare con mano.</p>
+      <div class="hero__actions"><a href="tessuti.html?collezione=Aquaclean" class="btn btn--solid">Vedi tutti i tessuti</a><a href="contatti.html" class="btn">Richiedi i campioni</a></div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="js/modules/drops.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

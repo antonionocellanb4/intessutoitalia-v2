@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Certificazioni — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="Certificazioni di prodotto e documenti aziendali di Nuova Pugliatex S.r.l.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/shop.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<main class="page">
+  <section class="container page-head certs-head">
+    <h1 class="certs-head__title" data-reveal>Qualità e<br>certificazioni</h1>
+    <p class="mute" data-reveal>Le certificazioni dei nostri tessuti e i documenti del Modello di Organizzazione, Gestione e Controllo ex D.Lgs. 231/01, disponibili da scaricare in PDF.</p>
+  </section>
+
+  <!-- il tavolo: i documenti arrivano impilati e scorrendo vengono distribuiti uno alla volta (pages.js initCerts).
+       Le anteprime sono le prime pagine vere dei PDF. -->
+  <section class="certs" data-certs>
+    <div class="container certs__desk">
+      <a class="sheet" href="https://www.inpelleitalia.it/wp-content/uploads/2025/03/G.01-Codice-Etico-Rev-1.pdf" target="_blank" rel="noopener">
+        <span class="sheet__paper"><span class="sheet__page"><img src="assets/img/certificazioni/codice-etico.webp" alt="Prima pagina del Codice Etico" width="910" height="1287"></span></span>
+        <span class="sheet__info"><b>Codice Etico</b><span class="mute">Modello 231/01 · 18 pagine · Rev. 01, gennaio 2025</span><span class="sheet__dl">Scarica il PDF</span></span>
+      </a>
+      <a class="sheet" href="https://www.inpelleitalia.it/wp-content/uploads/2025/03/G.02-Parte-Generale-Rev-1.pdf" target="_blank" rel="noopener">
+        <span class="sheet__paper"><span class="sheet__page"><img src="assets/img/certificazioni/parte-generale.webp" alt="Prima pagina della Parte Generale" width="910" height="1287"></span></span>
+        <span class="sheet__info"><b>Parte Generale</b><span class="mute">Modello 231/01 · 53 pagine · Rev. 01, gennaio 2025</span><span class="sheet__dl">Scarica il PDF</span></span>
+      </a>
+      <a class="sheet" href="https://www.inpelleitalia.it/wp-content/uploads/2023/12/T02_Procedura-whistleblowing_REV00.pdf" target="_blank" rel="noopener">
+        <span class="sheet__paper"><span class="sheet__page"><img src="assets/img/certificazioni/whistleblowing.webp" alt="Prima pagina della Procedura Whistleblowing" width="910" height="1287"></span></span>
+        <span class="sheet__info"><b>Procedura Whistleblowing</b><span class="mute">Parte Speciale · 18 pagine · dicembre 2023</span><span class="sheet__dl">Scarica il PDF</span></span>
+      </a>
+      <a class="sheet" aria-disabled="true" title="Certificato da ricevere dal cliente">
+        <span class="sheet__paper"><span class="sheet__page sheet__page--todo"><b>OEKO-TEX®<br>Standard 100</b><small>Certificato in arrivo</small></span></span>
+        <span class="sheet__info"><b>OEKO-TEX Standard 100</b><span class="mute">Certificato di prodotto</span><span class="sheet__dl">In arrivo</span></span>
+      </a>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

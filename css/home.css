@@ -1,0 +1,142 @@
+/* ---------- nuovi tessuti ---------- */
+/* titolo fermo, le card lo attraversano (come Etro). Dentro ogni foto c'è una copia bianca del titolo
+   che home.js tiene allineata all'originale: dove la card copre la scritta, la scritta continua sul tessuto. */
+.fabrics { position: relative; padding-block: var(--section); overflow: hidden; background: var(--c-bg); }
+.fabrics__title { text-align: center; font-size: clamp(3rem, 10.5vw, 11.5rem); padding-inline: var(--gutter); line-height: 1.02; letter-spacing: -.04em; }
+.fabrics__title, .fabrics__ghost { text-transform: none; } /* maiuscola solo a inizio frase; la p di "Scopri" vuole più interlinea */
+.fabrics__track { display: flex; gap: clamp(1rem, 2vw, 1.75rem); padding: 3rem var(--gutter) 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
+.fabrics__track::-webkit-scrollbar { display: none; }
+.fabrics.is-pinned { height: 100svh; padding: 0; display: grid; place-items: center; }
+.fabrics.is-pinned .fabrics__track { position: absolute; top: 50%; left: 0; padding: 0; overflow: visible; transform: translateY(-50%); align-items: center; gap: clamp(2.5rem, 6vw, 7rem); }
+
+.fabric-tile { position: relative; flex: none; width: clamp(14rem, 21vw, 21rem); border-radius: var(--radius); background: #fff; box-shadow: 0 2rem 4rem -1.5rem rgba(29, 26, 23, .35); overflow: hidden; scroll-snap-align: start; }
+.fabrics.is-pinned .fabric-tile:nth-child(even) { margin-top: 16vh; }
+.fabrics.is-pinned .fabric-tile:nth-child(3n) { margin-top: -14vh; }
+.fabric-tile__img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--c-stone); }
+.fabric-tile__img img { transition: transform 1.2s var(--ease); }
+.fabric-tile:hover .fabric-tile__img img { transform: scale(1.06); }
+.fabric-tile__label { display: grid; gap: .15rem; padding: 1rem 1.2rem 1.15rem; }
+.fabric-tile__name { font-family: var(--title); font-weight: var(--title-weight); font-size: 1.5rem; line-height: 1.1; text-transform: uppercase; }
+.fabric-tile__meta { font-size: .8125rem; color: var(--c-mute); }
+
+/* copia del titolo dentro la foto: solo con il pin attivo */
+.fabrics__ghost { display: none; position: absolute; top: 0; left: 0; z-index: 1; color: #fff; text-align: center; white-space: nowrap; pointer-events: none; transform-origin: 50% 50%; }
+.fabrics.is-pinned .fabrics__ghost { display: block; }
+
+/* card finale: chiude il giro con la CTA */
+.fabric-tile--end { display: grid; align-content: space-between; justify-items: start; gap: 1.5rem; aspect-ratio: 4 / 5.9; padding: clamp(1.5rem, 2vw, 2rem); background: var(--c-dark); color: #fff; }
+.fabric-tile__end-n { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(5rem, 9vw, 9rem); line-height: .85; letter-spacing: -.04em; }
+.fabric-tile__end-label { max-width: 14rem; font-size: 1.0625rem; line-height: 1.4; color: rgba(255, 255, 255, .86); }
+.fabric-tile--end:hover .btn { background: #fff; border-color: #fff; }
+
+.fabrics__fill { display: none; }
+.fabrics.is-pinned .fabrics__fill { position: absolute; inset: 0; z-index: 3; display: block; background: var(--c-dark); visibility: hidden; }
+.fabrics__fill-head { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 1.5rem; padding: var(--gutter); color: #fff; text-align: center; }
+.fabrics__fill-title { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(3.5rem, 11vw, 11rem); line-height: .9; letter-spacing: -.04em; }
+.fabrics__fill-head .lead { max-width: 30rem; margin-inline: auto; text-wrap: balance; color: rgba(255, 255, 255, .86); }
+/* PROVA: collezioni in orizzontale nel pannello. --open (0 → 1, da home.js): 0 = foto intera col nome,
+   1 = foto a sinistra e dettagli a destra. Il bordo chiaro stacca il pannello scuro dal fondo scuro. */
+.coll-rail { position: absolute; inset: calc(var(--header-h) + 1rem) 0 1.25rem; display: flex; }
+.coll-rail__slot { flex: none; width: 100%; height: 100%; padding-inline: var(--gutter); }
+.fabrics__fill .coll-slide { --open: 0; position: relative; display: block; top: 0; width: 100%; height: 100%; min-height: 0; color: var(--c-ink); text-align: left; box-shadow: 0 0 0 1px var(--c-line-light); }
+.fabrics__fill .coll-slide.stack__panel--dark { color: #fff; }
+.coll-slide .stack__media { position: absolute; inset: 0 auto 0 0; z-index: 1; width: calc(100% - var(--open) * 46%); }
+.coll-slide .stack__info { position: absolute; inset: 0 0 0 auto; width: 46%; opacity: calc(var(--open) * 1.6 - .6); transform: translateX(calc((1 - var(--open)) * 4rem)); }
+/* nome sopra la foto, solo a foto intera */
+.coll-slide__tag { position: absolute; left: clamp(1.5rem, 3vw, 3rem); bottom: clamp(1.5rem, 3vw, 3rem); z-index: 1; display: grid; gap: .75rem; color: #fff; opacity: calc(1 - var(--open) * 2.5); }
+.coll-slide .stack__media::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(180deg, rgba(21, 19, 17, 0), rgba(21, 19, 17, .7)); opacity: calc(1 - var(--open) * 2.5); }
+.coll-slide__name { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(3.5rem, 9vw, 9rem); line-height: .9; letter-spacing: -.04em; }
+@media (max-width: 1000px) {
+  .coll-slide .stack__media { inset: 0 0 auto 0; width: 100%; height: calc(100% - var(--open) * 60%); }
+  .coll-slide .stack__info { inset: auto 0 0 0; width: 100%; height: 60%; padding: 1.5rem; transform: translateY(calc((1 - var(--open)) * 2rem)); }
+  .coll-slide .stack__items, .coll-slide .stack__text { display: none; }
+}
+
+
+/* ---------- collezioni: pannelli che si impilano ---------- */
+/* ogni pannello resta fermo (sticky) e il successivo gli sale sopra; home.js rimpicciolisce e scurisce quello sotto.
+   --i sfalsa l'aggancio: dei pannelli sotto resta visibile il bordo, come un mazzo. */
+.stack__panels { display: grid; gap: 2rem; }
+.stack__panel {
+  position: sticky; top: calc(var(--header-h) + 1rem + var(--i) * .9rem);
+  display: grid; grid-template-columns: 1.15fr 1fr; height: calc(100svh - var(--header-h) - 3rem - var(--i) * .9rem); min-height: 34rem;
+  overflow: hidden; border-radius: var(--radius); transform-origin: 50% 0;
+}
+.stack__panel { transition: top .6s var(--ease); }
+.stack__panel::after { content: ""; position: absolute; inset: 0; background: var(--c-dark); opacity: var(--shade, 0); pointer-events: none; }
+.stack__panel--sand { background: var(--c-sand); }
+.stack__panel--stone { background: var(--c-stone); }
+.stack__panel--dark { background: var(--c-dark); color: #fff; }
+.stack__media { position: relative; overflow: hidden; }
+.stack__media img { position: absolute; inset: 0; scale: 1.12; }
+.stack__info { display: grid; grid-template-rows: auto 1fr auto auto; gap: clamp(1.25rem, 2.5vh, 2rem); padding: clamp(1.5rem, 3.5vw, 3.5rem); min-height: 0; }
+.stack__count { font-family: var(--title); font-weight: var(--title-weight); font-size: 1rem; color: var(--c-mute); }
+.stack__count span { color: var(--c-ink); }
+.stack__panel--dark .stack__count { color: rgba(255, 255, 255, .6); }
+.stack__panel--dark .stack__count span { color: #fff; }
+.stack__main { display: grid; gap: 1rem; align-content: center; }
+.stack__name { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(3rem, 6vw, 6.5rem); line-height: .95; letter-spacing: -.035em; }
+.stack__text { max-width: 30rem; font-size: clamp(1rem, 1.1vw, 1.125rem); line-height: 1.55; }
+.stack__panel--dark .stack__text { color: rgba(255, 255, 255, .86); }
+.stack__items { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 1rem; }
+.mini { display: grid; gap: .2rem; font-size: .9375rem; }
+.mini__img { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); margin-bottom: .5rem; }
+.mini__img img { transition: transform 1.2s var(--ease); }
+.mini:hover .mini__img img { transform: scale(1.06); }
+.stack__wide .mini__img { aspect-ratio: 16 / 7; margin: 0; }
+.stack__info > .btn { justify-self: start; }
+@media (max-height: 760px) and (min-width: 1001px) { .stack__text { display: none; } }
+@media (max-width: 1000px) {
+  .stack__panel { position: relative; top: 0; height: auto; min-height: 0; grid-template-columns: 1fr; }
+  .stack__media { aspect-ratio: 4 / 3; }
+  .stack__items { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack__wide { grid-column: 1 / -1; }
+}
+
+/* ---------- progetti, idee e tendenze ---------- */
+
+/* ---------- chi siamo ---------- */
+/* Cutefold: frase su tutta la larghezza con prima riga rientrata, sotto foto a sinistra e testo nell'ultimo terzo */
+.about__statement { font-size: clamp(2.25rem, 4.2vw, 4.25rem); line-height: 1; text-indent: 33.33%; max-width: none; }
+.about__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gutter); align-items: start; margin-top: clamp(4rem, 8vw, 8rem); }
+.about__img { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); }
+.about__grid .about__text { grid-column: 3; }
+.about__text p { font-size: clamp(1rem, 1.25vw, 1.25rem); line-height: 1.5; }
+.about__img img { scale: 1.18; }
+.about__text { display: grid; gap: 1.5rem; max-width: 30rem; }
+@media (max-width: 800px) { .about__grid { grid-template-columns: 1fr; } .about__grid .about__text { grid-column: auto; } .about__statement { text-indent: 0; } }
+
+
+/* ---------- progetti: punti sulla foto (home.js initSpot) ---------- */
+.spot__grid { display: grid; grid-template-columns: minmax(0, 1fr) 24rem; gap: clamp(1.5rem, 3vw, 3rem); align-items: stretch; }
+.spot__stage { position: relative; aspect-ratio: 3 / 2; /* fisso: i punti sono calcolati su questo riquadro */ overflow: hidden; border-radius: var(--radius); background: var(--c-stone); }
+.spot__photo { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .6s var(--ease), visibility .6s; }
+.spot__photo.is-active { opacity: 1; visibility: visible; }
+.spot__dot { position: absolute; left: var(--x); top: var(--y); width: 1.5rem; height: 1.5rem; translate: -50% -50%; border-radius: 50%; background: #fff; box-shadow: 0 0 0 .4rem rgba(255, 255, 255, .35), 0 .5rem 1.5rem rgba(21, 19, 17, .35); transition: background-color .3s, box-shadow .3s; }
+.spot__dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1px solid #fff; animation: spot-pulse 2.4s var(--ease) infinite; }
+@keyframes spot-pulse { from { opacity: .9; transform: scale(1); } to { opacity: 0; transform: scale(2.6); } }
+.spot__dot[aria-pressed="true"] { background: var(--c-copper); }
+/* nome del tessuto accanto al punto: sempre visibile su quello scelto, al passaggio sugli altri */
+.spot__dot span { position: absolute; left: calc(100% + .75rem); top: 50%; translate: 0 -50%; padding: .45rem .8rem; border-radius: var(--radius); background: #fff; color: var(--c-ink); font-size: .875rem; white-space: nowrap; opacity: 0; transition: opacity .3s; pointer-events: none; }
+.spot__dot[aria-pressed="true"] span, .spot__dot:hover span { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .spot__dot::after { animation: none; } }
+
+.spot__panel { display: grid; grid-template-rows: 1fr auto; gap: 1.5rem; }
+.spot__info { display: none; align-content: start; justify-items: start; gap: .75rem; }
+.spot__info.is-active { display: grid; }
+.spot__name { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(1.75rem, 2.4vw, 2.5rem); line-height: 1.05; letter-spacing: -.02em; }
+.spot__label { margin-top: .75rem; font-size: .875rem; }
+.spot__fabrics { justify-self: stretch; display: grid; border-top: 1px solid var(--c-line); margin-bottom: .75rem; }
+.spot__fabrics button { display: grid; grid-template-columns: 2.75rem 1fr auto; align-items: center; gap: 1rem; width: 100%; padding: .7rem .5rem .7rem 0; border-bottom: 1px solid var(--c-line); text-align: left; transition: background-color .3s, padding .4s var(--ease); }
+.spot__fabrics img { width: 2.75rem; height: 2.75rem; border-radius: var(--radius); }
+.spot__fabrics strong { font-weight: 500; }
+.spot__fabrics .mute { font-size: .8125rem; }
+.spot__fabrics button[aria-pressed="true"] { padding-left: .75rem; background: var(--c-stone); }
+.spot__thumbs { display: flex; gap: .5rem; }
+.spot__thumbs button { width: 5rem; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); opacity: .55; outline: 1px solid transparent; outline-offset: 2px; transition: opacity .3s, outline-color .3s; }
+.spot__thumbs button:hover { opacity: 1; }
+.spot__thumbs button[aria-pressed="true"] { opacity: 1; outline-color: var(--c-ink); }
+@media (max-width: 900px) {
+  .spot__grid { grid-template-columns: 1fr; }
+  .spot__dot { width: 1.75rem; height: 1.75rem; }
+}

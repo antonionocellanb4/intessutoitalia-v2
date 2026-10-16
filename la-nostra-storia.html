@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La nostra storia — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="La storia di inpelleitalia &amp; intessutoitalia, dal boom degli anni '60 a oggi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<main>
+  <!-- APERTURA: solo testo su bianco, così la prima foto a tutto schermo è quella delle tappe -->
+  <section class="container story-head">
+    <h1 class="display story-head__title" data-split>Una storia d'amore<br>per pelli e tessuti</h1>
+    <p class="story-head__text" data-reveal>Dal boom degli anni '60 a oggi: come un magazzino just in time è diventato uno dei leader italiani dei tessuti per il mobile imbottito.</p>
+  </section>
+
+  <!-- TAPPE, METRO DA SARTA: sezione agganciata a tutto schermo. Ogni tappa srotola la sua foto sopra la precedente, il nome
+       gigante sale dal basso e in fondo un metro da sarta scorre sotto l'ago fino alla tappa (pages.js initTape) -->
+  <section class="tape" data-tape>
+    <img class="tape__img" src="assets/img/venice3.jpg" alt="Divano grigio con cuscino blu" loading="lazy">
+    <img class="tape__img" src="assets/img/tessuti.jpg" alt="Campioni di tessuto impilati" loading="lazy">
+    <img class="tape__img" src="assets/img/drappeggio.jpg" alt="Tessuti d'arredamento drappeggiati" loading="lazy">
+    <img class="tape__img" src="assets/img/pelle.jpg" alt="Pelle per arredamento, dettaglio della grana" loading="lazy">
+    <img class="tape__img" src="assets/img/dsc01644-1.jpg" alt="Velluto blu e pelle grigia a contatto" loading="lazy">
+    <img class="tape__img" src="assets/img/copertina-green-fabrics.jpg" alt="Divano rivestito in un tessuto GreenFabrics" loading="lazy">
+    <div class="tape__eras" aria-hidden="true">
+      <p class="tape__era">Anni '60</p>
+      <p class="tape__era">Just in time</p>
+      <p class="tape__era">La famiglia</p>
+      <p class="tape__era">La gamma</p>
+      <p class="tape__era">Due marchi</p>
+      <p class="tape__era">Oggi</p>
+    </div>
+    <div class="tape__copy">
+      <div class="tape__text"><h3 class="tape__title"><span class="sr-only">Anni '60: </span>Il boom del mobile imbottito</h3><p>Sono gli anni del boom economico: ai piccoli produttori artigianali di salotti cominciano ad affiancarsi i primi giganti del mobile imbottito.</p></div>
+      <div class="tape__text"><h3 class="tape__title"><span class="sr-only">Just in time: </span>Un magazzino per chi ordina poco</h3><p>Piero Marinuzzi allestisce un magazzino di pelli e tessuti d'arredamento per le aziende che non hanno bisogno di grandi quantitativi: trovano subito il materiale, nella quantità che serve.</p></div>
+      <div class="tape__text"><h3 class="tape__title"><span class="sr-only">La famiglia: </span>Cresciuti con le persone</h3><p>L'azienda cresce con la passione e l'impegno della famiglia Marinuzzi e dei suoi collaboratori. La crescita di un'azienda viene dalla crescita delle persone che ci lavorano.</p></div>
+      <div class="tape__text"><h3 class="tape__title"><span class="sr-only">La gamma: </span>Pelli, finte pelli e tessuti</h3><p>L'esperienza si allarga a tutti i tipi di rivestimento: pelli, finte pelli, microfibre e tessuti, sia normali che ignifughi.</p></div>
+      <div class="tape__text"><h3 class="tape__title"><span class="sr-only">Due marchi: </span>inpelleitalia &amp; intessutoitalia</h3><p>Una storia d'amore per pelli e tessuti per l'arredamento, che oggi ha due nomi.</p></div>
+      <div class="tape__text"><h3 class="tape__title"><span class="sr-only">Oggi: </span>Uno dei leader in Italia</h3><p>Tra i leader italiani nella distribuzione di tessuti per il mobile imbottito, in Italia e all'estero. La gamma si rinnova di continuo, dagli antimacchia Aquaclean ai riciclati GreenFabrics.</p><a href="tessuti.html" class="link-arrow"><span class="link-arrow__icon"><svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h14M10 1l5 5-5 5"/></svg></span><span class="link-arrow__label">Scopri i tessuti</span></a></div>
+    </div>
+    <div class="tape__ruler" aria-hidden="true">
+      <div class="tape__strip">
+        <span class="tape__mark" data-tape-mark>Anni '60</span>
+        <span class="tape__mark" data-tape-mark>Just in time</span>
+        <span class="tape__mark" data-tape-mark>La famiglia</span>
+        <span class="tape__mark" data-tape-mark>La gamma</span>
+        <span class="tape__mark" data-tape-mark>Due marchi</span>
+        <span class="tape__mark" data-tape-mark>Oggi</span>
+      </div>
+      <span class="tape__needle"></span>
+    </div>
+  </section>
+
+  <!-- nascosta su richiesta (14 ott): scelto il metro da sarta -->
+  <!-- TAPPE, CUCITURA: un filo tratteggiato (una cucitura) scende tra le tappe e si cuce con lo scroll; l'ago è il punto
+       rame in testa. Quando il filo arriva a una tappa il suo nome si scurisce (pages.js initSeam) -->
+  <section class="seam section" data-seam hidden>
+    <div class="container">
+      <h2 class="h2 seam__heading" data-split>Dagli anni '60 a oggi</h2>
+      <div class="seam__list">
+        <svg class="seam__line" aria-hidden="true"><defs><mask id="seam-mask" maskUnits="userSpaceOnUse"><path class="seam__reveal"/></mask></defs><path class="seam__base"/><path class="seam__thread" mask="url(#seam-mask)"/><circle class="seam__needle" r="5"/></svg>
+        <article class="seam__item" data-seam-item>
+          <div class="seam__media" data-reveal-img><img src="assets/img/venice3.jpg" alt="Divano grigio con cuscino blu" loading="lazy"></div>
+          <div class="seam__text">
+            <p class="seam__era">Anni '60</p>
+            <h3 class="seam__title">Il boom del mobile imbottito</h3>
+            <p>Sono gli anni del boom economico: ai piccoli produttori artigianali di salotti cominciano ad affiancarsi i primi giganti del mobile imbottito.</p>
+          </div>
+        </article>
+        <article class="seam__item" data-seam-item>
+          <div class="seam__media" data-reveal-img><img src="assets/img/tessuti.jpg" alt="Campioni di tessuto impilati" loading="lazy"></div>
+          <div class="seam__text">
+            <p class="seam__era">Just in time</p>
+            <h3 class="seam__title">Un magazzino per chi ordina poco</h3>
+            <p>Piero Marinuzzi allestisce un magazzino di pelli e tessuti d'arredamento per le aziende che non hanno bisogno di grandi quantitativi: trovano subito il materiale, nella quantità che serve.</p>
+          </div>
+        </article>
+        <article class="seam__item" data-seam-item>
+          <div class="seam__media" data-reveal-img><img src="assets/img/drappeggio.jpg" alt="Tessuti d'arredamento drappeggiati" loading="lazy"></div>
+          <div class="seam__text">
+            <p class="seam__era">La famiglia</p>
+            <h3 class="seam__title">Cresciuti con le persone</h3>
+            <p>L'azienda cresce con la passione e l'impegno della famiglia Marinuzzi e dei suoi collaboratori. La crescita di un'azienda viene dalla crescita delle persone che ci lavorano.</p>
+          </div>
+        </article>
+        <article class="seam__item" data-seam-item>
+          <div class="seam__media" data-reveal-img><img src="assets/img/pelle.jpg" alt="Pelle per arredamento, dettaglio della grana" loading="lazy"></div>
+          <div class="seam__text">
+            <p class="seam__era">La gamma</p>
+            <h3 class="seam__title">Pelli, finte pelli e tessuti</h3>
+            <p>L'esperienza si allarga a tutti i tipi di rivestimento: pelli, finte pelli, microfibre e tessuti, sia normali che ignifughi.</p>
+          </div>
+        </article>
+        <article class="seam__item" data-seam-item>
+          <div class="seam__media" data-reveal-img><img src="assets/img/dsc01644-1.jpg" alt="Velluto blu e pelle grigia a contatto" loading="lazy"></div>
+          <div class="seam__text">
+            <p class="seam__era">Due marchi</p>
+            <h3 class="seam__title">inpelleitalia &amp; intessutoitalia</h3>
+            <p>Una storia d'amore per pelli e tessuti per l'arredamento, che oggi ha due nomi.</p>
+          </div>
+        </article>
+        <article class="seam__item" data-seam-item>
+          <div class="seam__media" data-reveal-img><img src="assets/img/copertina-green-fabrics.jpg" alt="Divano rivestito in un tessuto GreenFabrics" loading="lazy"></div>
+          <div class="seam__text">
+            <p class="seam__era">Oggi</p>
+            <h3 class="seam__title">Uno dei leader in Italia</h3>
+            <p>Tra i leader italiani nella distribuzione di tessuti per il mobile imbottito, in Italia e all'estero. La gamma si rinnova di continuo, dagli antimacchia Aquaclean ai riciclati GreenFabrics.</p>
+            <a href="tessuti.html" class="link-arrow"><span class="link-arrow__icon"><svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M1 6h14M10 1l5 5-5 5"/></svg></span><span class="link-arrow__label">Scopri i tessuti</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIUSURA: su bianco, senza foto, fa da stacco tra le tappe (scure, a tutto schermo) e il footer -->
+  <section class="section container story-end">
+    <h2 class="story-end__title" data-split>Il prossimo capitolo,<br>sui vostri divani.</h2>
+    <div class="story-end__side" data-reveal>
+      <p>Richiedi un campionario o scopri chi siamo oggi: prodotti, ricerca e showroom.</p>
+      <div class="hero__actions"><a href="contatti.html" class="btn btn--solid">Richiedi un campionario</a><a href="chi-siamo.html" class="btn">Chi siamo</a></div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

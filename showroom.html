@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Il nostro showroom — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="Visita lo showroom intessutoitalia a Noci (BA): tessuti e pelli da toccare con mano.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-header="over">
+
+<main>
+  <!-- HERO: foto a tutto schermo; ingresso a lamelle, allo scroll si stringe in carta su bianco (pages.js initHeroFx).
+       Foto segnaposto: servono quelle dello showroom -->
+  <section class="hero hero--about" data-hero data-hero-fx>
+    <div class="hero__media"><img src="assets/img/naturel3.jpg" alt="Ambiente arredato con divano in tessuto" fetchpriority="high"></div>
+    <div class="hero__content">
+      <h1 class="display hero__about-title" data-split>Da toccare<br>con mano</h1>
+    </div>
+    <p class="hero__text">Lo showroom intessutoitalia a Noci (BA): tessuti, pelli e microfibre dal vivo, su appuntamento.</p>
+  </section>
+
+  <!-- ENTRA NELLO SHOWROOM: sezione ferma; "Noci" gigante è una finestra sulla foto, lo scroll entra nella i finché
+       la foto riempie lo schermo (la foto è ritagliata con il tracciato delle lettere, che si ingrandisce senza limiti) (pages.js initSrZoom) -->
+  <section class="srzoom" data-srzoom>
+    <img class="srzoom__photo" src="assets/img/foto.jpg" alt="Divano verde in un soggiorno con parquet a spina" loading="lazy">
+    <!-- "Noci" in DM Sans 500 come tracciato (estratto dal font con fontTools, unità 1000/em, linea di base a 0): un testo SVG
+         oltre ~10× non viene più disegnato, un tracciato sì. data-stem = asta della i (x0 x1 y0 y1) -->
+    <svg class="srzoom__svg" aria-hidden="true"><defs><clipPath id="srzoom-clip" clipPathUnits="userSpaceOnUse"><path class="srzoom__glyphs" data-stem="1810.0 1910.0 -504 0" d="M73 0V-700H173L530 -163V-700H630V0H530L173 -536V0ZM951.0 12Q880.0 12 823.5 -21.0Q767.0 -54 734.5 -113.5Q702.0 -173 702.0 -251Q702.0 -331 735.0 -390.5Q768.0 -450 825.0 -483.0Q882.0 -516 953.0 -516Q1025.0 -516 1081.0 -483.0Q1137.0 -450 1169.5 -391.0Q1202.0 -332 1202.0 -252Q1202.0 -172 1169.5 -113.0Q1137.0 -54 1080.0 -21.0Q1023.0 12 951.0 12ZM951.0 -74Q992.0 -74 1025.5 -94.0Q1059.0 -114 1079.5 -153.5Q1100.0 -193 1100.0 -252Q1100.0 -311 1080.0 -350.5Q1060.0 -390 1026.5 -410.0Q993.0 -430 953.0 -430Q913.0 -430 879.0 -410.0Q845.0 -390 824.5 -350.5Q804.0 -311 804.0 -252Q804.0 -193 824.5 -153.5Q845.0 -114 878.5 -94.0Q912.0 -74 951.0 -74ZM1503.0 12Q1430.0 12 1373.0 -21.5Q1316.0 -55 1283.5 -114.0Q1251.0 -173 1251.0 -251Q1251.0 -330 1283.5 -389.5Q1316.0 -449 1373.0 -482.5Q1430.0 -516 1503.0 -516Q1595.0 -516 1657.0 -468.0Q1719.0 -420 1736.0 -338H1632.0Q1622.0 -382 1586.5 -406.0Q1551.0 -430 1502.0 -430Q1462.0 -430 1428.0 -409.5Q1394.0 -389 1373.5 -349.5Q1353.0 -310 1353.0 -252Q1353.0 -209 1365.0 -175.5Q1377.0 -142 1397.5 -119.0Q1418.0 -96 1445.0 -84.5Q1472.0 -73 1502.0 -73Q1535.0 -73 1561.5 -83.5Q1588.0 -94 1606.5 -115.0Q1625.0 -136 1632.0 -165H1736.0Q1719.0 -85 1657.0 -36.5Q1595.0 12 1503.0 12ZM1810.0 0V-504H1910.0V0ZM1861.0 -599Q1832.0 -599 1813.5 -617.0Q1795.0 -635 1795.0 -663Q1795.0 -690 1813.5 -707.5Q1832.0 -725 1861.0 -725Q1889.0 -725 1908.0 -707.5Q1927.0 -690 1927.0 -663Q1927.0 -635 1908.0 -617.0Q1889.0 -599 1861.0 -599Z"/></clipPath></defs></svg>
+    <p class="srzoom__caption">Via Repubblica 36/F, Noci (BA).<br>Ti aspettiamo.</p>
+  </section>
+
+  <!-- LA PARETE DEI CAMPIONI: campioni appesi come nello showroom; entrano cadendo e oscillano quando il mouse
+       ci passa vicino, come a sfiorarli (pages.js initSrWall) -->
+  <section class="section container srwall" data-srwall>
+    <div class="ideas__head">
+      <h2 class="h2">Centinaia di campioni<br>da sfiorare</h2>
+      <p class="lead mute">Tessuti, pelli e microfibre in centinaia di colori: qui li sfiori, in showroom li tocchi davvero.</p>
+    </div>
+    <div class="srwall__grid"><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/beige.jpg" alt="" loading="lazy"><figcaption>Beige</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/petrol.jpg" alt="" loading="lazy"><figcaption>Petrol</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/forest.jpg" alt="" loading="lazy"><figcaption>Forest</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/mostaza.jpg" alt="" loading="lazy"><figcaption>Mostaza</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/red.jpg" alt="" loading="lazy"><figcaption>Red</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/ocean.jpg" alt="" loading="lazy"><figcaption>Ocean</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/sand.jpg" alt="" loading="lazy"><figcaption>Sand</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/purple.jpg" alt="" loading="lazy"><figcaption>Purple</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/trufa.jpg" alt="" loading="lazy"><figcaption>Trufa</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/cement.jpg" alt="" loading="lazy"><figcaption>Cement</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/rose.jpg" alt="" loading="lazy"><figcaption>Rose</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aragon/thumbs/orange.jpg" alt="" loading="lazy"><figcaption>Orange</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/ambra.jpg" alt="" loading="lazy"><figcaption>Ambra</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/arizona.jpg" alt="" loading="lazy"><figcaption>Arizona</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/axel.jpg" alt="" loading="lazy"><figcaption>Axel</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/beverly.jpg" alt="" loading="lazy"><figcaption>Beverly</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/brezza.jpg" alt="" loading="lazy"><figcaption>Brezza</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/alma.jpg" alt="" loading="lazy"><figcaption>Alma</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/bruce.jpg" alt="" loading="lazy"><figcaption>Bruce</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/chopper.jpg" alt="" loading="lazy"><figcaption>Chopper</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/atlantic.jpg" alt="" loading="lazy"><figcaption>Atlantic</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/boston.jpg" alt="" loading="lazy"><figcaption>Boston</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/byblos.jpg" alt="" loading="lazy"><figcaption>Byblos</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/candy.jpg" alt="" loading="lazy"><figcaption>Candy</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/castle.jpg" alt="" loading="lazy"><figcaption>Castle</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/giotto.jpg" alt="" loading="lazy"><figcaption>Giotto</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/basket.jpg" alt="" loading="lazy"><figcaption>Basket</figcaption></figure><figure class="srwall__sw"><img src="assets/img/prodotti/besora.jpg" alt="" loading="lazy"><figcaption>Besora</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aquaclean/alboran.jpg" alt="" loading="lazy"><figcaption>Alboran</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aquaclean/florence.jpg" alt="" loading="lazy"><figcaption>Florence</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aquaclean/bison.jpg" alt="" loading="lazy"><figcaption>Bison</figcaption></figure><figure class="srwall__sw"><img src="assets/img/aquaclean/andros.jpg" alt="" loading="lazy"><figcaption>Andros</figcaption></figure></div>
+  </section>
+
+  <!-- LO SHOWROOM: la frase si accende parola per parola con lo scroll -->
+  <!-- nascosta: al suo posto "Entra nello showroom" -->
+  <section class="section container mvv-mission" hidden>
+    <p class="caps mute">Lo showroom</p>
+    <p class="statement h2" data-words>A Noci, nel cuore della Puglia, centinaia di tessuti, pelli e microfibre da vedere e toccare con mano.</p>
+    <p class="mvv-mission__text" data-reveal>Il nostro team ti accompagna nella scelta del rivestimento giusto: mano, colore, resistenza, manutenzione.</p>
+  </section>
+
+  <!-- COSA TROVI: righe a tutta larghezza che si aprono quando la parola sale oltre il 40% dello schermo (pages.js initVrows).
+       Testi DI ESEMPIO -->
+  <!-- nascosta: al suo posto la parete dei campioni -->
+  <section class="section container vrows" style="padding-top: 0" hidden>
+    <div class="ideas__head">
+      <h2 class="h2" data-split>Cosa trovi</h2>
+      <p class="lead mute" data-reveal>Tutto il campionario in un solo posto, da sfogliare e mettere a confronto.</p>
+    </div>
+    <article class="vrow" data-vrow>
+      <h3 class="vrow__word">Tessuti</h3>
+      <div class="vrow__panel"><div class="vrow__inner"><div class="vrow__content">
+        <div class="vrow__media"><img src="assets/img/tessuti.jpg" alt="Campioni di tessuto impilati" loading="lazy"></div>
+        <p>Le collezioni intessutoitalia, comprese GreenFabrics e Aquaclean, campione per campione.</p>
+      </div></div></div>
+    </article>
+    <article class="vrow" data-vrow>
+      <h3 class="vrow__word">Pelli</h3>
+      <div class="vrow__panel"><div class="vrow__inner"><div class="vrow__content">
+        <div class="vrow__media"><img src="assets/img/pelle.jpg" alt="Pelle per arredamento, dettaglio della grana" loading="lazy"></div>
+        <p>Pelli e finte pelli per l'imbottito: la grana e la mano si capiscono solo toccandole.</p>
+      </div></div></div>
+    </article>
+    <article class="vrow" data-vrow>
+      <h3 class="vrow__word">Microfibre</h3>
+      <div class="vrow__panel"><div class="vrow__inner"><div class="vrow__content">
+        <div class="vrow__media"><img src="assets/img/dsc01644-1.jpg" alt="Microfibra blu, dettaglio" loading="lazy"></div>
+        <p>Microfibre in tanti colori, morbide e facili da pulire, per l'uso di tutti i giorni.</p>
+      </div></div></div>
+    </article>
+  </section>
+
+  <!-- GALLERIA: la sezione si ferma su bianco e le foto scorrono in orizzontale, quella al centro è la più grande
+       (pages.js initVreel, come i video di Aquaclean). Su telefono: foto impilate. Foto SEGNAPOSTO: servono quelle dello showroom -->
+  <section class="vreel" data-vreel>
+    <div class="vreel__track">
+      <div class="vreel__intro">
+        <h2 class="vreel__title">Uno sguardo<br>allo showroom</h2>
+        <p>Gli ambienti dove vedere i tessuti sui divani, alla luce giusta.</p>
+      </div>
+      <figure class="vreel__card"><div class="vreel__ph"><img src="assets/img/venice3.jpg" alt="Divano bianco con cuscini colorati" loading="lazy"></div></figure>
+      <figure class="vreel__card"><div class="vreel__ph"><img src="assets/img/applicazioni-box-2.jpg" alt="Soggiorno luminoso con divano chiaro" loading="lazy"></div></figure>
+      <figure class="vreel__card"><div class="vreel__ph"><img src="assets/img/foto.jpg" alt="Divano verde in un soggiorno con parquet a spina" loading="lazy"></div></figure>
+      <figure class="vreel__card"><div class="vreel__ph"><img src="assets/img/testata8.jpg" alt="Divano in tessuto bordeaux" loading="lazy"></div></figure>
+      <figure class="vreel__card"><div class="vreel__ph"><img src="assets/img/green-fabrics-naturel.jpg" alt="Poltrona rosa con tavolino e lampade" loading="lazy"></div></figure>
+    </div>
+  </section>
+
+  <!-- VISITA: indirizzo grande, contatti e appuntamento; a destra la mappa -->
+  <section class="section container visit2">
+    <div class="visit2__text">
+      <p class="caps mute">Prenota la visita</p>
+      <h2 class="visit2__address" data-split>Via Repubblica, 36/F<br>Noci (BA)</h2>
+      <p class="visit2__lead" data-reveal>Ti riceviamo su appuntamento: chiamaci al <a href="tel:+390804977274">+39 080 497 7274</a> o scrivici a <a href="mailto:info@inpelleitalia.it">info@inpelleitalia.it</a>.</p>
+      <div class="hero__actions" data-reveal><a href="mailto:info@inpelleitalia.it?subject=Richiesta%20appuntamento%20showroom" class="btn btn--solid">Richiedi un appuntamento</a><a href="https://maps.google.com/?q=Nuova%20Pugliatex%20Via%20Repubblica%2036F%20Noci%20BA" class="btn" target="_blank" rel="noopener">Indicazioni stradali</a></div>
+    </div>
+    <div class="map visit2__map" data-reveal>
+      <iframe src="https://maps.google.com/maps?q=Nuova%20Pugliatex%20Via%20Repubblica%20Noci%20BA&z=16&output=embed" title="Mappa: Nuova Pugliatex, Noci (BA)" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

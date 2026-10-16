@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tessuti per arredamento — intessutoitalia</title>
+  <meta name="robots" content="noindex, nofollow"><!-- anteprima per il cliente: togliere al lancio -->
+  <meta name="description" content="Tessuti di pregio per arredamento e tappezzeria: filtra per collezione, composizione e proprietà.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+
+<main class="page">
+
+  <section class="container archive-head">
+    <div class="archive-head__row">
+      <h1 class="archive-head__title" data-reveal>Tessuti<br>per arredamento</h1>
+      <p class="mute" data-reveal>Velluti, ciniglie, tessuti tecnici e riciclati per rivestire divani, poltrone e sedute. Scopri le collezioni <a href="aquaclean.html">Aquaclean</a> e <a href="greenfabrics.html">GreenFabrics</a>: ogni articolo è disponibile in più varianti colore, pronto da spedire al metro.</p>
+    </div>
+  </section>
+
+  <section class="archive" data-archive>
+    <!-- barra filtri agganciata sotto l'header: pillole con tendina (details), colore con campioni veri -->
+    <div class="archive__bar" data-filters>
+      <div class="container archive__bar-in">
+        <div class="archive__pills">
+        <details class="fpill">
+          <summary>Collezione<span class="fpill__n" data-n hidden></span></summary>
+          <div class="fpill__pop"><label class="check"><input type="checkbox" name="collezione" value="Fabrics"><span>Fabrics</span></label><label class="check"><input type="checkbox" name="collezione" value="GreenFabrics"><span>GreenFabrics</span></label><label class="check"><input type="checkbox" name="collezione" value="Aquaclean"><span>Aquaclean</span></label></div>
+        </details>
+        <details class="fpill">
+          <summary>Composizione<span class="fpill__n" data-n hidden></span></summary>
+          <div class="fpill__pop"><label class="check"><input type="checkbox" name="composizione" value="Acetato"><span>Acetato</span></label><label class="check"><input type="checkbox" name="composizione" value="Acrilico"><span>Acrilico</span></label><label class="check"><input type="checkbox" name="composizione" value="Sintetico"><span>Sintetico</span></label><label class="check"><input type="checkbox" name="composizione" value="Cotone"><span>Cotone</span></label><label class="check"><input type="checkbox" name="composizione" value="Poliestere"><span>Poliestere</span></label><label class="check"><input type="checkbox" name="composizione" value="Cotone riciclato GRS"><span>Cotone riciclato GRS</span></label></div>
+        </details>
+        <details class="fpill">
+          <summary>Proprietà<span class="fpill__n" data-n hidden></span></summary>
+          <div class="fpill__pop"><label class="check"><input type="checkbox" name="proprieta" value="Doppia altezza"><span>Doppia altezza</span></label><label class="check"><input type="checkbox" name="proprieta" value="Eco-certified"><span>Eco-certified</span></label><label class="check"><input type="checkbox" name="proprieta" value="Idrorepellente"><span>Idrorepellente</span></label><label class="check"><input type="checkbox" name="proprieta" value="Ignifugo"><span>Ignifugo</span></label><label class="check"><input type="checkbox" name="proprieta" value="Indoor/outdoor"><span>Indoor/outdoor</span></label><label class="check"><input type="checkbox" name="proprieta" value="Solidità alla luce"><span>Solidità alla luce</span></label></div>
+        </details>
+        <details class="fpill">
+          <summary>Colore<span class="fpill__n" data-n hidden></span></summary>
+          <div class="fpill__pop fpill__pop--colors"><label class="cswatch"><input type="checkbox" name="colore" value="Neutri"><img src="assets/img/prodotti/alma.jpg" alt="" loading="lazy"><span>Neutri</span></label><label class="cswatch"><input type="checkbox" name="colore" value="Grigi"><img src="assets/img/prodotti/boston.jpg" alt="" loading="lazy"><span>Grigi</span></label><label class="cswatch"><input type="checkbox" name="colore" value="Blu"><img src="assets/img/prodotti/atlantic.jpg" alt="" loading="lazy"><span>Blu</span></label><label class="cswatch"><input type="checkbox" name="colore" value="Verdi"><img src="assets/img/prodotti/aragon.jpg" alt="" loading="lazy"><span>Verdi</span></label><label class="cswatch"><input type="checkbox" name="colore" value="Rossi"><img src="assets/img/prodotti/giotto.jpg" alt="" loading="lazy"><span>Rossi</span></label><label class="cswatch"><input type="checkbox" name="colore" value="Gialli"><img src="assets/img/prodotti/basket.jpg" alt="" loading="lazy"><span>Gialli</span></label></div>
+        </details>
+          <button type="button" class="link-reset" data-reset hidden>Rimuovi filtri</button>
+        </div>
+        <div class="archive__tools">
+          <p class="mute"><span data-count>18</span> tessuti</p>
+          <label class="select"><span class="sr-only">Ordina per</span>
+            <select data-sort><option value="">In primo piano</option><option value="az">Nome A–Z</option><option value="za">Nome Z–A</option><option value="colors">Più colori</option></select>
+          </label>
+          <div class="cols" role="group" aria-label="Colonne">
+            <button type="button" data-cols="4" class="is-active">4 <span aria-hidden="true">||||</span></button>
+            <button type="button" data-cols="6">6 <span aria-hidden="true">||||||</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container archive__main">
+      <div class="archive__grid" data-grid>
+        <a href="aquaclean.html" class="archive__tile archive__tile--big" data-at="4">
+          <img src="assets/img/venice2.jpg" alt="" loading="lazy">
+          <span class="archive__tile-text"><b>Aquaclean</b>Le macchie vanno via con un po' d'acqua.<i class="archive__tile-cta">Scopri Aquaclean</i></span>
+        </a>
+        <a href="sostenibilita.html" class="archive__tile" data-at="18">
+          <img src="assets/img/copertina-green-fabrics.jpg" alt="" loading="lazy">
+          <span class="archive__tile-text"><b>GreenFabrics</b>Tessuti da cotone rigenerato, certificati GRS.<i class="archive__tile-cta">Scopri GreenFabrics</i></span>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Alma" data-colors="14" data-collezione="GreenFabrics" data-composizione="Cotone riciclato GRS" data-proprieta="Eco-certified" data-colore="Neutri">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/alma.jpg" alt="Alma" loading="lazy"><span class="badge-colors">14 colori</span></div>
+          <p class="fabric-card__title">Alma</p><p class="fabric-card__price">19,90 €/m</p>
+          <p class="fabric-card__meta">Tessuto riciclato</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Ambra" data-colors="18" data-collezione="Fabrics" data-composizione="Poliestere" data-proprieta="Solidità alla luce" data-colore="Rossi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/ambra.jpg" alt="Ambra" loading="lazy"><span class="badge-colors">18 colori</span></div>
+          <p class="fabric-card__title">Ambra</p><p class="fabric-card__price">27,50 €/m</p>
+          <p class="fabric-card__meta">Tessuto per arredamento</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Aragon" data-colors="20" data-collezione="Fabrics" data-composizione="Poliestere" data-proprieta="Idrorepellente" data-colore="Verdi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/aragon.jpg" alt="Aragon" loading="lazy"><span class="badge-colors">20 colori</span></div>
+          <p class="fabric-card__title">Aragon</p><p class="fabric-card__price">24,15 €/m</p>
+          <p class="fabric-card__meta">Tessuto idrorepellente</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Arizona" data-colors="12" data-collezione="Fabrics" data-composizione="Poliestere" data-proprieta="Doppia altezza" data-colore="Blu">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/arizona.jpg" alt="Arizona" loading="lazy"><span class="badge-colors">12 colori</span></div>
+          <p class="fabric-card__title">Arizona</p><p class="fabric-card__price">31,40 €/m</p>
+          <p class="fabric-card__meta">Tessuto doppia altezza</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Atlantic" data-colors="16" data-collezione="Fabrics" data-composizione="Acrilico" data-proprieta="Indoor/outdoor" data-colore="Blu">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/atlantic.jpg" alt="Atlantic" loading="lazy"><span class="badge-colors">16 colori</span></div>
+          <p class="fabric-card__title">Atlantic</p><p class="fabric-card__price">18,60 €/m</p>
+          <p class="fabric-card__meta">Tessuto indoor/outdoor</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Axel" data-colors="10" data-collezione="Fabrics" data-composizione="Cotone" data-proprieta="Solidità alla luce" data-colore="Blu">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/axel.jpg" alt="Axel" loading="lazy"><span class="badge-colors">10 colori</span></div>
+          <p class="fabric-card__title">Axel</p><p class="fabric-card__price">25,90 €/m</p>
+          <p class="fabric-card__meta">Tessuto per arredamento</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Barein" data-colors="22" data-collezione="Fabrics" data-composizione="Sintetico" data-proprieta="Ignifugo" data-colore="Verdi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/barein.jpg" alt="Barein" loading="lazy"><span class="badge-colors">22 colori</span></div>
+          <p class="fabric-card__title">Barein</p><p class="fabric-card__price">29,70 €/m</p>
+          <p class="fabric-card__meta">Tessuto ignifugo</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Basket" data-colors="9" data-collezione="Fabrics" data-composizione="Acrilico" data-proprieta="Indoor/outdoor" data-colore="Gialli">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/basket.jpg" alt="Basket" loading="lazy"><span class="badge-colors">9 colori</span></div>
+          <p class="fabric-card__title">Basket</p><p class="fabric-card__price">21,30 €/m</p>
+          <p class="fabric-card__meta">Tessuto indoor/outdoor</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Besora" data-colors="6" data-collezione="Fabrics" data-composizione="Acetato" data-proprieta="Doppia altezza" data-colore="Neutri">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/besora.jpg" alt="Besora" loading="lazy"><span class="badge-colors">6 colori</span></div>
+          <p class="fabric-card__title">Besora</p><p class="fabric-card__price">34,20 €/m</p>
+          <p class="fabric-card__meta">Tessuto doppia altezza</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Beverly" data-colors="15" data-collezione="Fabrics" data-composizione="Poliestere" data-proprieta="Solidità alla luce" data-colore="Rossi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/beverly.jpg" alt="Beverly" loading="lazy"><span class="badge-colors">15 colori</span></div>
+          <p class="fabric-card__title">Beverly</p><p class="fabric-card__price">23,40 €/m</p>
+          <p class="fabric-card__meta">Tessuto per arredamento</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Boston" data-colors="11" data-collezione="Fabrics" data-composizione="Sintetico" data-proprieta="Ignifugo" data-colore="Grigi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/boston.jpg" alt="Boston" loading="lazy"><span class="badge-colors">11 colori</span></div>
+          <p class="fabric-card__title">Boston</p><p class="fabric-card__price">19,90 €/m</p>
+          <p class="fabric-card__meta">Tessuto ignifugo</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Brezza" data-colors="19" data-collezione="Fabrics" data-composizione="Poliestere" data-proprieta="Idrorepellente" data-colore="Rossi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/brezza.jpg" alt="Brezza" loading="lazy"><span class="badge-colors">19 colori</span></div>
+          <p class="fabric-card__title">Brezza</p><p class="fabric-card__price">27,50 €/m</p>
+          <p class="fabric-card__meta">Tessuto idrorepellente</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Bruce" data-colors="12" data-collezione="GreenFabrics" data-composizione="Cotone riciclato GRS" data-proprieta="Eco-certified" data-colore="Grigi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/bruce.jpg" alt="Bruce" loading="lazy"><span class="badge-colors">12 colori</span></div>
+          <p class="fabric-card__title">Bruce</p><p class="fabric-card__price">22,80 €/m</p>
+          <p class="fabric-card__meta">Tessuto riciclato</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Candy" data-colors="24" data-collezione="Aquaclean" data-composizione="Poliestere" data-proprieta="Idrorepellente" data-colore="Rossi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/candy.jpg" alt="Candy" loading="lazy"><span class="badge-colors">24 colori</span></div>
+          <p class="fabric-card__title">Candy</p><p class="fabric-card__price">31,40 €/m</p>
+          <p class="fabric-card__meta">Tessuto antimacchia Aquaclean</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Canvas" data-colors="13" data-collezione="Fabrics" data-composizione="Cotone" data-proprieta="Doppia altezza" data-colore="Blu">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/canvas.jpg" alt="Canvas" loading="lazy"><span class="badge-colors">13 colori</span></div>
+          <p class="fabric-card__title">Canvas</p><p class="fabric-card__price">18,60 €/m</p>
+          <p class="fabric-card__meta">Tessuto doppia altezza</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Castle" data-colors="17" data-collezione="Aquaclean" data-composizione="Poliestere" data-proprieta="Idrorepellente" data-colore="Blu">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/castle.jpg" alt="Castle" loading="lazy"><span class="badge-colors">17 colori</span></div>
+          <p class="fabric-card__title">Castle</p><p class="fabric-card__price">25,90 €/m</p>
+          <p class="fabric-card__meta">Tessuto antimacchia Aquaclean</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Giotto" data-colors="20" data-collezione="Aquaclean" data-composizione="Poliestere" data-proprieta="Solidità alla luce" data-colore="Rossi">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/giotto.jpg" alt="Giotto" loading="lazy"><span class="badge-colors">20 colori</span></div>
+          <p class="fabric-card__title">Giotto</p><p class="fabric-card__price">29,70 €/m</p>
+          <p class="fabric-card__meta">Tessuto antimacchia Aquaclean</p>
+        </a>
+        <a href="scheda-prodotto.html" class="fabric-card" data-name="Venice" data-colors="26" data-collezione="Aquaclean" data-composizione="Sintetico" data-proprieta="Idrorepellente" data-colore="Neutri">
+          <div class="fabric-card__media"><img src="assets/img/prodotti/venice.jpg" alt="Venice" loading="lazy"><span class="badge-colors">26 colori</span></div>
+          <p class="fabric-card__title">Venice</p><p class="fabric-card__price">21,30 €/m</p>
+          <p class="fabric-card__meta">Tessuto antimacchia Aquaclean</p>
+        </a>
+      </div>
+      <p class="archive__empty" data-empty hidden>Nessun tessuto corrisponde ai filtri scelti. <button type="button" class="link-reset" data-reset>Rimuovi i filtri</button></p>
+
+      <nav class="pager" aria-label="Pagine"><a aria-current="page">1</a><a aria-disabled="true">2</a><a aria-disabled="true">3</a></nav>
+
+      <div class="archive__seo">
+        <h2 class="h3">Tessuti di pregio per arredamento e tappezzeria</h2>
+        <p class="mute">Da oltre sessant'anni selezioniamo tessuti per il mobile imbottito: velluti morbidi, tessuti idrorepellenti e antimacchia, articoli ignifughi per il contract e collezioni riciclate certificate GRS. Tutti i tessuti sono venduti al metro lineare, con scheda tecnica, indicazioni di manutenzione e campionario disponibile su richiesta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="config-banner config-banner--sofa" data-reveal data-sofa>
+      <div class="config-banner__text">
+        <h2 class="h2">Non sai quale<br>tessuto scegliere?</h2>
+        <p class="lead">Rispondi a poche domande e scegli d'istinto tra le foto: il configuratore ti propone i tessuti adatti e ti mostra il divano già rivestito.</p>
+        <a href="https://intessuto.vercel.app/configuratore" class="btn btn--solid" target="_blank" rel="noopener">Prova il configuratore</a>
+      </div>
+      <div class="sofa">
+        <div class="sofa__photos">
+          <img src="assets/img/lookbook/aragon.webp" alt="Divano rivestito in Aragon" loading="lazy" class="is-active">
+          <img src="assets/img/lookbook/brezza.webp" alt="Divano rivestito in Brezza" loading="lazy">
+          <img src="assets/img/lookbook/byblos.webp" alt="Divano rivestito in Byblos" loading="lazy">
+          <img src="assets/img/lookbook/cheyenne.webp" alt="Divano rivestito in Cheyenne" loading="lazy">
+          <img src="assets/img/lookbook/axel.webp" alt="Divano rivestito in Axel" loading="lazy">
+          <img src="assets/img/lookbook/boston.webp" alt="Divano rivestito in Boston" loading="lazy">
+        </div>
+        <div class="sofa__strip">
+          <div class="sofa__swatches" role="group" aria-label="Tessuto del divano">
+            <button type="button" style="background-image: url(assets/img/lookbook/aragon.webp)" aria-label="Aragon" aria-pressed="true" data-name="Aragon"></button>
+            <button type="button" style="background-image: url(assets/img/lookbook/brezza.webp)" aria-label="Brezza" aria-pressed="false" data-name="Brezza"></button>
+            <button type="button" style="background-image: url(assets/img/lookbook/byblos.webp)" aria-label="Byblos" aria-pressed="false" data-name="Byblos"></button>
+            <button type="button" style="background-image: url(assets/img/lookbook/cheyenne.webp)" aria-label="Cheyenne" aria-pressed="false" data-name="Cheyenne"></button>
+            <button type="button" style="background-image: url(assets/img/lookbook/axel.webp)" aria-label="Axel" aria-pressed="false" data-name="Axel"></button>
+            <button type="button" style="background-image: url(assets/img/lookbook/boston.webp)" aria-label="Boston" aria-pressed="false" data-name="Boston"></button>
+          </div>
+          <p class="sofa__name" aria-live="polite">Aragon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<!-- script classici (non moduli): così il prototipo funziona anche aperto con doppio clic dal Finder -->
+<script src="js/modules/smooth-scroll.js"></script>
+<script src="js/modules/layout.js"></script>
+<script src="js/modules/cart.js"></script>
+<script src="js/modules/header.js"></script>
+<script src="js/modules/reveal.js"></script>
+<script src="js/modules/carousel.js"></script>
+<script src="js/modules/home.js"></script>
+<script src="js/modules/archive.js"></script>
+<script src="js/modules/product.js"></script>
+<script src="js/modules/pages.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
