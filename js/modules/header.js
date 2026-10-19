@@ -59,7 +59,7 @@ function initHeader() {
   let openId = null;
   const setOpen = (id) => {
     openId = id;
-    // chiudendo, l'header resta "da menu" finché il pannello rame non è risalito sopra il logo
+    // chiudendo, l'header resta "da menu" finché il pannello bianco non è risalito sopra il logo
     root.classList.toggle("menu-closing", !id && root.classList.contains("menu-open"));
     const was = [...panels].find((p) => p.classList.contains("is-open"));
     if (!id && was) {

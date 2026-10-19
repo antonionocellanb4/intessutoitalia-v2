@@ -95,7 +95,7 @@
 .header.is-dark .header__logo img { filter: brightness(0) invert(1); }
 .header--over:not(.is-solid) { color: #fff; } /* sopra la hero: niente vetro */
 .header--over:not(.is-solid)::before, .menu-open .header::before, .menu-closing .header::before { opacity: 0; }
-/* a menu aperto (e finché il pannello risale) l'header è trasparente sopra il rame del pannello, che parte da sotto l'header */
+/* a menu aperto (e finché il pannello risale) l'header è trasparente sopra il bianco del pannello, che parte da sotto l'header */
 .menu-open .header, .menu-closing .header { color: var(--c-ink); }
 
 .header__left, .header__right, .header__links { display: flex; align-items: center; gap: clamp(1rem, 1.8vw, 1.6rem); }
@@ -111,7 +111,8 @@
 .header__links, .header__right { position: relative; gap: .7rem; }
 /* pillole color pietra sui fondi chiari, bianche sopra foto e fondi scuri */
 .header { --pill: var(--c-stone); }
-.header.is-dark, .header--over:not(.is-solid), .menu-open .header, .menu-closing .header { --pill: #fff; }
+.header.is-dark, .header--over:not(.is-solid) { --pill: #fff; }
+.menu-open .header, .menu-closing .header { --pill: var(--c-stone); } /* sul pannello bianco del menu */
 .pills__bg { position: absolute; inset: -16px; filter: url(#goo); pointer-events: none; }
 .pills__bg i, .pills__bg b { position: absolute; background: var(--pill); }
 .pills__bg i { border-radius: var(--radius-btn); }
@@ -130,13 +131,13 @@
 .header__logo { display: block; width: clamp(7rem, 9vw, 8.5rem); }
 .header__logo img { height: auto; object-fit: contain; }
 .header--over:not(.is-solid) .header__logo img, .menu-open .header__logo img { filter: brightness(0) invert(1); }
-.menu-open .header .header__logo img, .menu-closing .header .header__logo img { filter: brightness(0); } /* logo scuro sul rame (l'onda rame sparirebbe) */
+.menu-open .header .header__logo img, .menu-closing .header .header__logo img { filter: none; } /* logo originale sul pannello bianco */
 
-/* ---------- mega menu: pannello scuro che scende sotto l'header ---------- */
+/* ---------- mega menu: pannello bianco che scende dall'alto, sotto l'header ---------- */
 .mega-backdrop { position: fixed; inset: 0; z-index: 44; background: rgba(21, 19, 17, .35); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: opacity .6s var(--ease), visibility 0s .6s; }
 .mega {
   position: fixed; z-index: 45; top: 0; left: 0; right: 0; max-height: 100svh; overflow-y: auto; padding-top: var(--header-h); /* un solo fondo con l'header */
-  background: var(--c-copper); color: var(--c-ink);
+  background: #fff; color: var(--c-ink);
   clip-path: inset(0 0 100% 0); visibility: hidden;
   transition: clip-path .8s cubic-bezier(.77, 0, .175, 1), visibility 0s .8s;
 }
@@ -177,9 +178,8 @@
 .mega__bar { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem var(--gutter); padding: 1.25rem var(--gutter); border-top: 1px solid rgba(29, 26, 23, .22); }
 .mega__bar p { font-size: .9375rem; color: rgba(29, 26, 23, .8); }
 .mega__bar strong { font-weight: 500; color: var(--c-ink); margin-right: .35rem; }
-/* sul rame la primaria diventa nera e la secondaria ha il bordo scuro */
-.mega .btn--white { background: var(--c-ink); border-color: var(--c-ink); color: #fff; }
-.mega .btn--white:hover { background: #fff; border-color: #fff; color: var(--c-ink); }
+/* sul bianco la primaria resta rame (hover nero) e la secondaria ha il bordo scuro */
+.mega .btn--white:hover { background: var(--c-ink); border-color: var(--c-ink); color: #fff; }
 .mega .btn--light { color: var(--c-ink); }
 .mega .btn--light:hover { background: var(--c-ink); border-color: var(--c-ink); color: #fff; }
 .mega__actions { display: flex; gap: .75rem; }
