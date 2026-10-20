@@ -460,7 +460,7 @@ figure.vreel__card { margin: 0; }
 
 /* ---------- Certificazioni: il tavolo dei documenti (pages.js initCerts) ---------- */
 .certs-head__title { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(3rem, 7.4vw, 8rem); line-height: .95; letter-spacing: -.045em; }
-.certs { background: var(--c-stone); }
+.certs { overflow-x: clip; background: var(--c-stone); } /* i fogli storti non allargano la pagina su telefono */
 .certs__desk { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.25rem, 2.5vw, 2.5rem); align-items: start; min-height: 100lvh; align-content: center; padding-block: calc(var(--header-h) + 2rem) 3rem; }
 .sheet { display: grid; gap: 1.1rem; }
 .sheet__paper { display: block; position: relative; }

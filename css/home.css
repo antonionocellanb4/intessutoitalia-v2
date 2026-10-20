@@ -27,6 +27,7 @@
 .fabric-tile--end { display: grid; align-content: space-between; justify-items: start; gap: 1.5rem; aspect-ratio: 4 / 5.9; padding: clamp(1.5rem, 2vw, 2rem); background: var(--c-dark); color: #fff; }
 .fabric-tile__end-n { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(5rem, 9vw, 9rem); line-height: .85; letter-spacing: -.04em; }
 .fabric-tile__end-label { max-width: 14rem; font-size: 1.0625rem; line-height: 1.4; color: rgba(255, 255, 255, .86); }
+.fabric-tile--end .btn { justify-self: stretch; padding-inline: 1rem; } /* la card è stretta: il bottone sta dentro i margini, su una riga */
 .fabric-tile--end:hover .btn { background: #fff; border-color: #fff; }
 
 .fabrics__fill { display: none; }

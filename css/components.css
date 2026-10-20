@@ -246,6 +246,8 @@
 .sofa__swatches button[aria-pressed="true"] { transform: translateY(-.4rem); box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--c-ink); }
 .sofa__name { min-width: 5.5rem; font-family: var(--title); font-weight: var(--title-weight); font-size: 1.25rem; line-height: 1; }
 @media (max-width: 800px) {
+  .config-banner--sofa { grid-template-columns: 1fr; } /* la regola a due colonne qui sopra vinceva su quella generale per telefono */
+  .sofa__swatches button { width: 2.4rem; height: 2.4rem; }
   .config-banner--sofa .config-banner__text { padding: 2.5rem 1.5rem 1.5rem; }
   .sofa { min-height: 0; aspect-ratio: 4 / 3.4; }
   .sofa__photos { -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%); mask-image: linear-gradient(180deg, transparent, #000 18%); }
