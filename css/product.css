@@ -30,7 +30,7 @@
 body:has(.pd-buy) .footer__legal { padding-bottom: 7rem; }
 
 /* ---------- hero ---------- */
-.pd-hero { position: relative; height: 100svh; min-height: 36rem; overflow: hidden; color: #fff; background: var(--c-dark); }
+.pd-hero { position: relative; height: 100lvh; min-height: 36rem; overflow: hidden; color: #fff; background: var(--c-dark); }
 .pd-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(21, 19, 17, .6), rgba(21, 19, 17, .15) 50%, transparent 70%), linear-gradient(180deg, rgba(21, 19, 17, .4), transparent 25%, transparent 70%, rgba(21, 19, 17, .35)); }
 .pd-hero__copy { position: absolute; z-index: 1; left: var(--gutter); right: var(--gutter); top: 50%; transform: translateY(-50%); display: grid; gap: 1.25rem; justify-items: start; }
 .pd-hero__title { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(5rem, 15vw, 15rem); line-height: .85; letter-spacing: -.05em; }
@@ -40,7 +40,7 @@ body:has(.pd-buy) .footer__legal { padding-bottom: 7rem; }
 .pd-statement__text { max-width: 62rem; margin-inline: auto; font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(2rem, 4.2vw, 4.25rem); line-height: 1.05; letter-spacing: -.035em; }
 
 /* ---------- colori: il tessuto a tutto schermo, la mazzetta a sinistra ---------- */
-.pd-colors { position: relative; height: 100svh; min-height: 40rem; overflow: hidden; background: var(--c-stone); scroll-margin-top: 0; }
+.pd-colors { position: relative; height: 100lvh; min-height: 40rem; overflow: hidden; background: var(--c-stone); scroll-margin-top: 0; }
 .pd-colors__stage { position: absolute; inset: 0; transition: opacity .35s var(--ease); }
 .pd-colors__card { position: absolute; left: var(--gutter); top: 50%; transform: translateY(-50%); display: grid; gap: .5rem; width: 23rem; padding: 1.5rem; background: #fff; border-radius: var(--radius); box-shadow: 0 1.5rem 3rem -1.5rem rgba(29, 26, 23, .35); }
 .pd-colors__name { font-family: var(--title); font-weight: var(--title-weight); font-size: 2rem; line-height: 1.1; letter-spacing: -.02em; margin-bottom: .75rem; }
@@ -66,7 +66,7 @@ body:has(.pd-buy) .footer__legal { padding-bottom: 7rem; }
 .pd-download svg { width: .9rem; }
 
 /* ---------- blocchi a tutta foto ---------- */
-.pd-feat { position: relative; height: 100svh; min-height: 40rem; overflow: hidden; color: #fff; background: var(--c-dark); }
+.pd-feat { position: relative; height: 100lvh; min-height: 40rem; overflow: hidden; color: #fff; background: var(--c-dark); }
 .pd-feat img { position: absolute; inset: 0; }
 .pd-feat::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(21, 19, 17, .7), rgba(21, 19, 17, .3) 45%, transparent 70%), linear-gradient(180deg, rgba(21, 19, 17, .4), transparent 30%, transparent 55%, rgba(21, 19, 17, .6)); }
 .pd-feat__copy { position: absolute; z-index: 1; inset: calc(var(--header-h) + 3rem) 0 auto; display: grid; gap: 1rem; justify-items: start; }
@@ -96,7 +96,7 @@ body:has(.pd-buy) .footer__legal { padding-bottom: 7rem; }
 .pd-pay span { padding: .4rem .8rem; border: 1px solid var(--c-line); border-radius: var(--radius); font-size: .8125rem; }
 
 /* ---------- chiusura ---------- */
-.pd-closing { position: relative; height: 100svh; min-height: 40rem; overflow: hidden; color: #fff; background: var(--c-dark); }
+.pd-closing { position: relative; height: 100lvh; min-height: 40rem; overflow: hidden; color: #fff; background: var(--c-dark); }
 .pd-closing img { position: absolute; inset: 0; }
 .pd-closing::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(21, 19, 17, .78), rgba(21, 19, 17, .3) 45%, transparent 70%); }
 .pd-closing__copy { position: absolute; z-index: 1; left: 0; right: 0; bottom: 9rem; display: grid; gap: 1.25rem; justify-items: start; }

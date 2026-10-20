@@ -50,7 +50,7 @@
 .rnd { position: relative; overflow: clip; background: var(--c-dark); color: #fff; }
 
 /* dentro il tessuto (pages.js initDeep) */
-.deep { height: 100svh; }
+.deep { height: 100lvh; }
 .deep__img { position: absolute; inset: 0; transform-origin: 50% 50%; }
 .deep::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(21, 19, 17, .55), rgba(21, 19, 17, .25) 70%); }
 .deep__copy { position: absolute; z-index: 2; inset: 0; display: grid; place-items: center; padding-inline: var(--gutter); text-align: center; }
@@ -82,7 +82,7 @@
 .duo__link { margin-top: .5rem; padding-bottom: .2rem; border-bottom: 1px solid currentColor; font-size: .9375rem; }
 
 /* chiusura a tutta foto */
-.about-closing { position: relative; height: 100svh; min-height: 36rem; overflow: hidden; color: #fff; background: var(--c-dark); }
+.about-closing { position: relative; height: 100lvh; min-height: 36rem; overflow: hidden; color: #fff; background: var(--c-dark); }
 .about-closing > img { position: absolute; inset: 0; }
 .about-closing::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(21, 19, 17, .8), rgba(21, 19, 17, .25) 50%, transparent 75%); }
 .about-closing__copy { position: absolute; z-index: 1; left: 0; right: 0; bottom: clamp(2rem, 6vh, 4.5rem); display: grid; gap: 1.25rem; justify-items: start; }
@@ -149,7 +149,7 @@
 @media (max-width: 1000px) { .story-head, .story-end { grid-template-columns: 1fr; } }
 
 /* tappe, metro da sarta: foto a tutto schermo una sopra l'altra, nome gigante, metro che scorre sotto l'ago */
-.tape { --rule: clamp(4.5rem, 9vh, 5.75rem); --w: clamp(9rem, 20vw, 22rem); position: relative; height: 100svh; overflow: hidden; background: var(--c-dark); color: #fff; }
+.tape { --rule: clamp(4.5rem, 9vh, 5.75rem); --w: clamp(9rem, 20vw, 22rem); position: relative; height: 100lvh; overflow: hidden; background: var(--c-dark); color: #fff; }
 .tape__img { position: absolute; inset: 0; }
 .tape::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(0deg, rgba(21, 19, 17, .88), rgba(21, 19, 17, .5) 40%, rgba(21, 19, 17, .1) 70%, rgba(21, 19, 17, .25)); pointer-events: none; }
 .tape__eras { position: absolute; z-index: 2; left: var(--gutter); right: var(--gutter); bottom: calc(var(--rule) + clamp(1.25rem, 4vh, 3rem)); height: 1.08em; overflow: hidden; font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(4.5rem, 14vw, 16rem); line-height: 1; letter-spacing: -.05em; }
@@ -203,7 +203,7 @@
 .mvv-mission { display: grid; gap: 1.5rem; }
 .mvv-mission__text { max-width: 34rem; margin-left: auto; font-size: 1.125rem; line-height: 1.6; color: var(--c-mute); }
 /* vision: foto che si apre da piccola a tutto schermo (stato iniziale dato da initVzoom: senza JS la foto è già piena) */
-.vzoom { position: relative; height: 100svh; overflow: hidden; background: var(--c-bg); color: #fff; }
+.vzoom { position: relative; height: 100lvh; overflow: hidden; background: var(--c-bg); color: #fff; }
 .vzoom__img { position: absolute; inset: 0; overflow: hidden; }
 .vzoom::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(21, 19, 17, .8), rgba(21, 19, 17, .25) 50%, transparent 75%); opacity: var(--shade, 1); pointer-events: none; }
 .vzoom__line { position: absolute; z-index: 1; left: var(--gutter); right: var(--gutter); text-align: center; font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(2.25rem, 5.4vw, 6rem); line-height: 1; letter-spacing: -.045em; color: var(--c-ink); }
@@ -244,17 +244,19 @@ html:not(.js) .vzoom__line { display: none; }
 /* ================= Sostenibilità ================= */
 /* palette della pagina (rif. Delta Cafés, Saapro): verde bosco + beige salvia al posto di nero e bianco */
 .page-green { --g-deep: #0f2a1f; --c-bg: #e5e2d3; --c-stone: #d8d6c4; }
-.ghero { position: relative; height: 100svh; min-height: 34rem; overflow: hidden; background: var(--g-deep); color: #ece9dc; }
+.ghero { position: relative; height: 100lvh; min-height: 34rem; overflow: hidden; background: var(--g-deep); color: #ece9dc; }
 .ghero__words { position: absolute; left: 0; right: 0; top: 50%; height: 1.15em; transform: translateY(-62%); overflow: hidden; text-align: center; font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(3.5rem, 13.5vw, 16rem); line-height: 1.1; letter-spacing: -.06em; }
 .ghero__words span { position: absolute; left: 0; right: 0; top: 0; opacity: 0; transform: translateY(60%); transition: transform .9s var(--ease), opacity .6s var(--ease); }
 .ghero__words span.is-active { opacity: 1; transform: none; }
 .ghero__ribbon { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s var(--ease); pointer-events: none; }
 .ghero.is-ready .ghero__ribbon { opacity: 1; }
-.ghero__foot { position: absolute; z-index: 1; left: 0; right: 0; bottom: clamp(2rem, 6vh, 4rem); display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: end; justify-content: space-between; }
+.ghero__foot { position: absolute; z-index: 1; left: 0; right: 0; bottom: calc(clamp(2rem, 6vh, 4rem) + 100lvh - 100svh); /* sopra la barra di Safari aperta */ display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; align-items: end; justify-content: space-between; }
 .ghero__text { max-width: 30rem; font-size: 1.125rem; color: rgba(236, 233, 220, .88); }
+/* telefono: le parole salgono sopra il nastro, che altrimenti le copre */
+@media (max-width: 900px) { .ghero__words { top: 27%; font-size: 15vw; } }
 
 /* dal filo al divano: le foto sono una sopra l'altra (la prima in cima); initGsteps le rimpicciolisce a turno */
-.gsteps { position: relative; height: 100svh; overflow: hidden; background: var(--g-deep, var(--c-dark)); color: #fff; }
+.gsteps { position: relative; height: 100lvh; overflow: hidden; background: var(--g-deep, var(--c-dark)); color: #fff; }
 .gsteps__frame { position: absolute; inset: 0; overflow: hidden; }
 .gsteps::after { content: ""; position: absolute; inset: 0; z-index: 10; background: linear-gradient(0deg, rgba(15, 42, 31, .85), rgba(15, 42, 31, .2) 50%, rgba(15, 42, 31, .4)); pointer-events: none; }
 .gsteps__heading { position: absolute; z-index: 11; left: var(--gutter); top: calc(var(--header-h) + 1.5rem); font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(1.5rem, 2.4vw, 2.5rem); letter-spacing: -.03em; }
@@ -290,7 +292,7 @@ html:not(.js) .vzoom__line { display: none; }
 .gph { position: relative; display: grid; place-items: center; width: 100%; height: 100%; min-height: 12rem; padding: 1rem; border-radius: var(--radius); background: #c9cfb3; color: var(--c-ink); font-size: .8125rem; }
 
 /* pianeta: fisarmonica a tre pannelli; il contenuto ha la larghezza del pannello aperto, così mentre si apre non va a capo */
-.gplanet { display: grid; height: 100svh; padding-block: calc(var(--header-h) + 1.5rem) 2rem; }
+.gplanet { display: grid; height: 100lvh; padding-block: calc(var(--header-h) + 1.5rem) 2rem; }
 .gplanet__panels { display: flex; gap: clamp(.6rem, 1vw, 1rem); min-height: 0; }
 .gpan { position: relative; flex: 1 1 0; min-width: 0; overflow: hidden; border-radius: var(--radius); }
 .gpan:first-child { flex-grow: 4; }
@@ -327,7 +329,7 @@ html:not(.js) .vzoom__line { display: none; }
 }
 
 /* la collezione: spirale di campioni in three.js su fondo verde con fasci di luce diagonali (rif. xiloteca.it) */
-.gfloat { position: relative; height: 100svh; min-height: 36rem; overflow: hidden; color: #ece9dc;
+.gfloat { position: relative; height: 100lvh; min-height: 36rem; overflow: hidden; color: #ece9dc;
   background:
     linear-gradient(118deg, transparent 38%, rgba(150, 190, 110, .1) 46%, transparent 52%),
     linear-gradient(118deg, transparent 62%, rgba(150, 190, 110, .08) 70%, transparent 76%),
@@ -342,7 +344,7 @@ html:not(.js) .vzoom__line { display: none; }
 
 
 /* Aquaclean, collezioni a lamelle: sfondo a tutto schermo + carta al centro; le strisce sono create da initBlinds */
-.blinds { position: relative; display: grid; place-items: center; height: 100svh; min-height: 38rem; overflow: hidden; background: var(--c-dark); color: #fff; }
+.blinds { position: relative; display: grid; place-items: center; height: 100lvh; min-height: 38rem; overflow: hidden; background: var(--c-dark); color: #fff; }
 .blinds__stack { position: absolute; inset: 0; overflow: hidden; }
 .blinds__layer { position: absolute; inset: 0; overflow: hidden; }
 .blinds__stack img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -376,13 +378,13 @@ html:not(.js) .vzoom__line { display: none; }
 .vreel__meta { display: flex; gap: 1rem; margin-top: 1rem; font-size: 1.0625rem; }
 .vreel__meta span { color: var(--c-mute); font-variant-numeric: tabular-nums; }
 /* desktop (initVreel): sezione ferma, la fila scorre in orizzontale; il video al centro è il più grande */
-.vreel.is-live { height: 100svh; overflow: hidden; }
+.vreel.is-live { height: 100lvh; overflow: hidden; }
 .is-live .vreel__track { display: flex; gap: clamp(1rem, 2.5vw, 2.5rem); height: 100%; align-items: center; padding: 0 29vw 0 var(--gutter); }
 .is-live .vreel__intro { flex: none; width: 34vw; margin: 0 4vw 0 0; align-content: center; }
 .is-live .vreel__card { flex: none; position: static; padding: 0; background: none; width: 42vw; transform: scale(calc(1 - var(--f, 0) * .2)); opacity: calc(1 - var(--f, 0) * .45); }
 
 /* Aquaclean, "Come si toglie una macchia" (drops.js initWash): tessuto a tutto schermo, testo a sinistra */
-.wash { position: relative; height: 100svh; min-height: 36rem; overflow: hidden; background: #e9e6e1; }
+.wash { position: relative; height: 100lvh; min-height: 36rem; overflow: hidden; background: #e9e6e1; }
 .wash__media, .wash__media img, .wash__canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .wash__media img { object-fit: cover; }
 .wash__canvas { opacity: 0; transition: opacity .6s var(--ease); }
@@ -414,7 +416,7 @@ html:not(.js) .vzoom__line { display: none; }
 
 /* ---------- Aquaclean, "Cosa toglie" (initAqList): il titolo parte enorme al centro e si posa in alto a sinistra; le
    macchie passano al centro una alla volta, enormi, e si sciolgono (filtro SVG in JS); alla fine la frase al centro ---------- */
-.aqa { position: relative; height: 100svh; display: grid; grid-template-columns: 1fr minmax(0, 30rem); gap: 2rem var(--gutter); align-items: end; padding: calc(var(--header-h) + 1.5rem) var(--gutter) clamp(2rem, 6vh, 4.5rem); background: var(--c-bg); }
+.aqa { position: relative; height: 100lvh; display: grid; grid-template-columns: 1fr minmax(0, 30rem); gap: 2rem var(--gutter); align-items: end; padding: calc(var(--header-h) + 1.5rem) var(--gutter) clamp(2rem, 6vh, 4.5rem); background: var(--c-bg); }
 .aqa > div:first-child { align-self: start; }
 .aqa__title { width: max-content; max-width: 100%; font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(2.25rem, 4vw, 4rem); line-height: 1; letter-spacing: -.035em; transform-origin: 50% 50%; }
 .aqa__list { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 0; list-style: none; pointer-events: none; font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(4.5rem, 17vw, 17rem); line-height: .98; letter-spacing: -.05em; }
@@ -444,7 +446,7 @@ figure.vreel__card { margin: 0; }
 
 /* ---------- Showroom: "Entra nello showroom" (initSrZoom) e parete dei campioni (initSrWall) ---------- */
 .srzoom, .srwall { position: relative; }
-.srzoom { height: 100svh; overflow: hidden; background: var(--c-bg); }
+.srzoom { height: 100lvh; overflow: hidden; background: var(--c-bg); }
 .srzoom__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; clip-path: url(#srzoom-clip); }
 .srzoom__svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .srzoom__caption { position: absolute; left: var(--gutter); bottom: clamp(2rem, 6vh, 4rem); color: #fff; font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(2rem, 4vw, 4rem); line-height: 1.02; letter-spacing: -.035em; text-shadow: 0 1px 30px rgba(0, 0, 0, .35); }
@@ -459,7 +461,7 @@ figure.vreel__card { margin: 0; }
 /* ---------- Certificazioni: il tavolo dei documenti (pages.js initCerts) ---------- */
 .certs-head__title { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(3rem, 7.4vw, 8rem); line-height: .95; letter-spacing: -.045em; }
 .certs { background: var(--c-stone); }
-.certs__desk { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.25rem, 2.5vw, 2.5rem); align-items: start; min-height: 100svh; align-content: center; padding-block: calc(var(--header-h) + 2rem) 3rem; }
+.certs__desk { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.25rem, 2.5vw, 2.5rem); align-items: start; min-height: 100lvh; align-content: center; padding-block: calc(var(--header-h) + 2rem) 3rem; }
 .sheet { display: grid; gap: 1.1rem; }
 .sheet__paper { display: block; position: relative; }
 /* il foglio: carta bianca con un'ombra morbida da tavolo; in hover si solleva appena */
@@ -478,7 +480,7 @@ figure.vreel__card { margin: 0; }
 @media (max-width: 900px) { .certs__desk { grid-template-columns: repeat(2, 1fr); min-height: 0; padding-block: clamp(3rem, 8vw, 4rem); } }
 
 /* ---------- Fabrics: un tessuto per ogni seduta (pages.js initFprops) ---------- */
-.fprops { position: relative; height: 100svh; overflow: hidden; background: var(--c-bg); }
+.fprops { position: relative; height: 100lvh; overflow: hidden; background: var(--c-bg); }
 .fprops__title { position: absolute; z-index: 2; left: var(--gutter); top: calc(var(--header-h) + 1.25rem); font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(1.75rem, 3vw, 3rem); line-height: 1; letter-spacing: -.035em; }
 .fprop { position: absolute; inset: 0; display: grid; justify-items: center; align-content: center; gap: clamp(1.25rem, 2.5vh, 2rem); padding: calc(var(--header-h) + 1rem) var(--gutter) 2rem; text-align: center; }
 .fprop__fan { position: relative; width: clamp(8rem, 12vw, 12.5rem); aspect-ratio: 3 / 4; }
@@ -495,7 +497,7 @@ figure.vreel__card { margin: 0; }
 .fprop__card:nth-child(3):last-child span { left: auto; right: .5rem; } /* sennò la carta centrale copre il nome */
 
 /* ---------- GreenFabrics: il tessuto si rifà (pages.js initWeave) ---------- */
-.weave { --n: 14; position: relative; height: 100svh; overflow: hidden; background: #0f2a1f; color: #ece9dc; }
+.weave { --n: 14; position: relative; height: 100lvh; overflow: hidden; background: #0f2a1f; color: #ece9dc; }
 .weave__in { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2rem var(--gutter); height: 100%; padding-top: var(--header-h); }
 .weave__copy { display: grid; gap: 1.5rem; max-width: 34rem; }
 .weave__title { font-family: var(--title); font-weight: var(--title-weight); font-size: clamp(2.5rem, 5vw, 5.25rem); line-height: .98; letter-spacing: -.045em; color: #fff; }

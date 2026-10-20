@@ -6,7 +6,7 @@
 .fabrics__title, .fabrics__ghost { text-transform: none; } /* maiuscola solo a inizio frase; la p di "Scopri" vuole più interlinea */
 .fabrics__track { display: flex; gap: clamp(1rem, 2vw, 1.75rem); padding: 3rem var(--gutter) 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: none; }
 .fabrics__track::-webkit-scrollbar { display: none; }
-.fabrics.is-pinned { height: 100svh; padding: 0; display: grid; place-items: center; }
+.fabrics.is-pinned { height: 100lvh; padding: 0; display: grid; place-items: center; }
 .fabrics.is-pinned .fabrics__track { position: absolute; top: 50%; left: 0; padding: 0; overflow: visible; transform: translateY(-50%); align-items: center; gap: clamp(2.5rem, 6vw, 7rem); }
 
 .fabric-tile { position: relative; flex: none; width: clamp(14rem, 21vw, 21rem); border-radius: var(--radius); background: #fff; box-shadow: 0 2rem 4rem -1.5rem rgba(29, 26, 23, .35); overflow: hidden; scroll-snap-align: start; }

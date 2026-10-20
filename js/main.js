@@ -5,6 +5,7 @@ document.documentElement.classList.add("js");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 if (typeof gsap !== "undefined" && !reduced) {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.config({ ignoreMobileResize: true }); // la barra di Safari che si apre e chiude non ricalcola le sezioni agganciate
   initSmoothScroll();
   // i pin vanno creati in ordine di pagina e prima dei trigger sottostanti
   initHero();

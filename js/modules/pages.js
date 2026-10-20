@@ -302,7 +302,8 @@ function initGfloat() {
     cards.push(m);
   }
 
-  let target = 0, cur = 0, vel = 0, offX = 0;
+  let target = 0, cur = 0, vel = 0, offX = 0, band = null;
+  const copy = root.querySelector(".gfloat__copy"), cta = root.querySelector(".gfloat__cta");
   ScrollTrigger.create({ trigger: root, start: "top top", end: () => `+=${innerHeight * 2.2}`, pin: true, onUpdate: (st) => (target = st.progress) });
   const resize = () => {
     const w = root.clientWidth, h = root.clientHeight;
@@ -312,6 +313,12 @@ function initGfloat() {
     camera.fov = 2 * Math.atan(viewW / camera.aspect / 2 / camera.position.z) * (180 / Math.PI);
     camera.updateProjectionMatrix();
     offX = camera.aspect < 1 ? 0 : 4; // a destra: a sinistra c'è il testo
+    // telefono: la spirale gira ferma nella fascia libera tra il testo in alto e il bottone in basso, senza passarci sopra
+    band = null;
+    if (camera.aspect < 1) {
+      const upp = viewW / camera.aspect / h, top = copy.offsetTop + copy.offsetHeight, bottom = cta.offsetTop;
+      band = { y: (h / 2 - (top + bottom) / 2) * upp, span: Math.max(1, ((bottom - top) * upp - H * 1.2) / 2) };
+    }
   };
   resize();
   addEventListener("resize", resize);
@@ -327,7 +334,8 @@ function initGfloat() {
       const { l, dy, dr } = m.userData;
       const ang = l * TURNS * Math.PI - a * 0.9 * Math.PI;
       const r = R + dr;
-      m.position.set(offX + r * Math.sin(ang), l * SPAN + dy - a * 8, r * Math.cos(ang));
+      const y = band ? band.y + l * band.span + dy * 0.4 : l * SPAN + dy - a * 8;
+      m.position.set(offX + r * Math.sin(ang), y, r * Math.cos(ang));
       m.material.uniforms.uShade.value = 0.5 + 0.5 * (0.5 + 0.5 * Math.cos(ang)); // dietro più scuri
     });
     renderer.render(scene, camera);
@@ -583,7 +591,10 @@ function initFooterFx() {
   const foot = document.querySelector(".footer2"); if (!foot) return;
   const word = foot.querySelector("[data-footer-word]");
   // stesso spostamento in px per tutti i blocchi (con yPercent ognuno si muoverebbe secondo la sua altezza e si sovrapporrebbero)
-  gsap.fromTo(foot.children, { y: () => -innerHeight * 0.3 }, { y: 0, ease: "none", scrollTrigger: { trigger: foot, start: "top bottom", end: "bottom bottom", scrub: true, invalidateOnRefresh: true } });
+  // su telefono niente parallasse: il footer è più alto dello schermo e il titolo resterebbe sotto il bordo della pagina
+  gsap.matchMedia().add("(min-width: 901px)", () => {
+    gsap.fromTo(foot.children, { y: () => -innerHeight * 0.3 }, { y: 0, ease: "none", scrollTrigger: { trigger: foot, start: "top bottom", end: "bottom bottom", scrub: true, invalidateOnRefresh: true } });
+  });
   // la scritta è un solo tracciato: lo si divide nei contorni (M...) e li si raggruppa per lettera (contorni che si sovrappongono in x)
   fetch(word.querySelector("img").src).then((r) => r.text()).then((txt) => {
     const src = new DOMParser().parseFromString(txt, "image/svg+xml").querySelector("svg");

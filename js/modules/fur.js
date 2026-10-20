@@ -224,11 +224,31 @@ function setupFur() {
     last = { x, y };
   };
   hero.addEventListener("pointermove", (e) => {
+    if (e.pointerType === "touch") return; // il dito lo seguono gli eventi touch qui sotto
     const r = canvas.getBoundingClientRect();
     move((e.clientX - r.left) / r.width, 1 - (e.clientY - r.top) / r.height);
     lastMove = performance.now();
   });
   hero.addEventListener("pointerleave", () => (last = null));
+  // telefono: il dito spazzola il pelo anche mentre la pagina scorre (gli eventi touch arrivano anche durante lo scroll).
+  // La direzione è quella del dito sullo schermo, il punto è dove il dito sta sul tessuto adesso: scorrendo verso il basso
+  // il pelo si pettina verso il basso, di lato si pettina senza scorrere.
+  let lastT = null;
+  hero.addEventListener("touchstart", () => (lastT = null), { passive: true });
+  hero.addEventListener("touchmove", (e) => {
+    const t = e.touches[0], r = canvas.getBoundingClientRect();
+    if (lastT) {
+      const dx = (t.clientX - lastT.x) / r.width, dy = -(t.clientY - lastT.y) / r.height, len = Math.hypot(dx, dy);
+      if (len > 1e-4) {
+        const k = Math.min(1, len * 40);
+        brush.dx = dx / len * k; brush.dy = dy / len * k;
+        brush.force = Math.min(1, len * 60);
+      }
+    }
+    brush.x = (t.clientX - r.left) / r.width; brush.y = 1 - (t.clientY - r.top) / r.height;
+    lastT = { x: t.clientX, y: t.clientY };
+    lastMove = performance.now();
+  }, { passive: true });
 
   let visible = true;
   new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(hero);

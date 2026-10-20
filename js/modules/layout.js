@@ -13,8 +13,6 @@ const MEGA_COLLECTIONS = [
 const MEGA_PROPS = ["Idrorepellente", "Indoor/outdoor", "Ignifugo", "Doppia altezza", "Eco-certified"];
 // famiglie di colore dell'archivio, col campione Aragon più vicino
 const MEGA_COLORS = [["Neutri", "beige"], ["Grigi", "light-grey"], ["Blu", "ocean"], ["Verdi", "forest"], ["Rossi", "red"], ["Gialli", "yellow"]];
-// solo su telefono il menu porta anche alle pagine dell'azienda (su desktop sono nell'header)
-const MEGA_MORE = [["Chi siamo", "chi-siamo.html"], ["La nostra storia", "la-nostra-storia.html"], ["Mission, Vision & Valori", "mission-vision-valori.html"], ["Qualità e certificazioni", "certificazioni.html"], ["Sostenibilità", "sostenibilita.html"], ["Showroom", "showroom.html"], ["Contatti", "contatti.html"]];
 const CONFIGURATOR = "https://intessuto.vercel.app/configuratore";
 
 // mega menu "Azienda": le voci del menu di prima. Senza href = pagina non ancora fatta (link disattivato, didascalia "in preparazione").
@@ -34,6 +32,7 @@ const SOON = "Pagina in preparazione.";
 // pannello del mega menu: voci grandi con foto e didascalia a destra (header.js), colonna di link, barra in fondo
 const megaPanel = (id, label, items, middle, bar) => `
 <div class="mega" id="${id}" data-lenis-prevent>
+  <button type="button" class="mega__back" data-sub-back>Menu</button>
   <div class="mega__main">
     <nav class="mega__colls${items.length > 4 ? " mega__colls--long" : ""}" aria-label="${label}">
       ${items.map(([l, h, , d], i) => link(l, h).replace("<a", `<a data-mega-img="${i}" data-desc="${d || SOON}"`)).join("")}
@@ -65,7 +64,7 @@ function header(over) {
   return `
 <header class="header${over ? " header--over" : ""}">
   <div class="header__left">
-    <button type="button" class="header__burger" aria-label="Apri il menu" aria-controls="menu" aria-expanded="false" data-menu-toggle="menu"><span></span><span></span></button>
+    <button type="button" class="header__burger" aria-label="Apri il menu" aria-controls="menu-m" aria-expanded="false" data-menu-toggle="menu-m"><span></span><span></span></button>
     <nav class="header__links" aria-label="Principale">
       <button type="button" class="header__link" aria-controls="menu" aria-expanded="false" data-menu-toggle="menu">Prodotti</button>
       <button type="button" class="${COMPANY_PAGES.includes(PAGE) ? "header__link is-current" : "header__link"}" aria-controls="menu-azienda" aria-expanded="false" data-menu-toggle="menu-azienda">Azienda</button>
@@ -77,13 +76,31 @@ function header(over) {
   <div class="header__right">
     <span class="header__link header__lang">ITA</span>
     <button type="button" class="header__link header__search">Cerca</button>
-    <button type="button" class="header__link header__cart" aria-controls="cart" data-cart-open>Carrello (<span data-cart-n>0</span>)</button>
+    <button type="button" class="header__link header__cart" aria-controls="cart" aria-label="Carrello" data-cart-open><span class="header__cart-txt">Carrello (</span><svg class="header__cart-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span data-cart-n>0</span><span class="header__cart-txt">)</span></button>
   </div>
 </header>
 <!-- filtro "liquido" per le pillole del menu (header.js): sfoca le forme bianche e ne ritaglia il contorno, così i ponti
      tra una pillola e l'altra diventano colli morbidi -->
 <svg class="goo-defs" aria-hidden="true" width="0" height="0"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/><feColorMatrix in="b" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8"/></filter></svg>
 <div class="mega-backdrop" data-menu-close></div>
+<!-- telefono: primo livello del menu; Prodotti e Azienda aprono il loro pannello che entra da destra (header.js) -->
+<div class="mega mega--root" id="menu-m" data-lenis-prevent>
+  <div class="mega__main">
+    <nav class="mega__colls" aria-label="Menu">
+      <button type="button" class="mega__sub" aria-controls="menu" data-sub="menu">Prodotti</button>
+      <button type="button" class="mega__sub" aria-controls="menu-azienda" data-sub="menu-azienda">Azienda</button>
+      ${link("Showroom", "showroom.html")}
+      ${link("Contatti", "contatti.html")}
+    </nav>
+  </div>
+  <div class="mega__bar">
+    <p><strong>Non sai quale tessuto scegliere?</strong> Il configuratore ti propone quelli adatti al tuo divano.</p>
+    <div class="mega__actions">
+      <a href="contatti.html" class="btn btn--light">Richiedi un campionario</a>
+      <a href="${CONFIGURATOR}" class="btn btn--white" target="_blank" rel="noopener">Prova il configuratore</a>
+    </div>
+  </div>
+</div>
 ${megaPanel("menu", "Collezioni", MEGA_COLLECTIONS, `
       <div class="mega__group">
         <p class="mega__label">Per caratteristica</p>
@@ -94,7 +111,7 @@ ${megaPanel("menu", "Collezioni", MEGA_COLLECTIONS, `
         <div class="mega__colors">
           ${MEGA_COLORS.map(([v, f]) => `<a href="tessuti.html?colore=${v}"><img src="assets/img/aragon/thumbs/${f}.jpg" alt="" loading="lazy">${v}</a>`).join("")}
         </div>
-      </div>${megaGroup("Azienda", MEGA_MORE, " mega__more")}`, `
+      </div>`, `
     <p><strong>Non sai quale tessuto scegliere?</strong> Il configuratore ti propone quelli adatti al tuo divano.</p>
     <div class="mega__actions">
       <a href="contatti.html" class="btn btn--light">Richiedi un campionario</a>

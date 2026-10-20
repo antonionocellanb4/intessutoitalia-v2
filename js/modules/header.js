@@ -74,6 +74,7 @@ function initHeader() {
     }
     root.classList.toggle("menu-open", !!id);
     panels.forEach((p) => p.classList.toggle("is-open", p.id === id));
+    if (!id) panels.forEach((p) => p.classList.remove("is-sub")); // chiudendo, si riparte dal primo livello
     toggles.forEach((t) => t.setAttribute("aria-expanded", t.dataset.menuToggle === id));
     pills.forEach((place) => place());
     id ? lenis?.stop() : lenis?.start();
@@ -81,6 +82,22 @@ function initHeader() {
   toggles.forEach((t) => t.addEventListener("click", () => setOpen(openId === t.dataset.menuToggle ? null : t.dataset.menuToggle)));
 
   document.querySelectorAll("[data-menu-close]").forEach((b) => b.addEventListener("click", () => setOpen(null)));
+
+  // telefono, menu a livelli: Prodotti e Azienda entrano da destra sopra il primo livello; "Menu" li riporta indietro
+  document.querySelectorAll("[data-sub]").forEach((b) => b.addEventListener("click", () => {
+    const sub = document.getElementById(b.dataset.sub);
+    sub.scrollTop = 0;
+    sub.classList.add("is-sub");
+    b.setAttribute("aria-expanded", true);
+    sub.querySelector("[data-sub-back]").focus({ preventScroll: true });
+  }));
+  document.querySelectorAll("[data-sub-back]").forEach((b) => b.addEventListener("click", () => {
+    const sub = b.closest(".mega");
+    sub.classList.remove("is-sub");
+    const opener = document.querySelector(`[data-sub="${sub.id}"]`);
+    opener.setAttribute("aria-expanded", false);
+    opener.focus({ preventScroll: true });
+  }));
   addEventListener("keydown", (e) => e.key === "Escape" && setOpen(null));
 
   // voci grandi del menu: la foto a destra e la didascalia seguono la voce sotto il mouse (o col fuoco da tastiera)
