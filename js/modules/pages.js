@@ -271,7 +271,8 @@ function initGfloat() {
   const camera = new THREE.PerspectiveCamera(10, 1, 1, 400);
   camera.position.z = 100;
 
-  const R = 6, SPAN = 14, TURNS = 1.6, N = 26, W = 1.9, H = 3; // raggio, mezza altezza, giri, campioni, misure
+  const R = 6, SPAN = 14, TURNS = 1.6, W = 1.9, H = 3; // raggio, mezza altezza minima, giri su SPAN, misure
+  const DENS = 26 / 28, N = 64; // campioni per unità d'altezza; ne prepara abbastanza per lo schermo più alto
   const loader = new THREE.TextureLoader();
   const shared = { uVel: { value: 0 }, uTime: { value: 0 } };
   const srcs = root.dataset.swatches.split(",");
@@ -297,13 +298,12 @@ function initGfloat() {
     const m = new THREE.Mesh(geo, mat);
     const s = 0.85 + 0.3 * rand(k);
     m.scale.set(s, s, 1);
-    m.userData = { l: (k / (N - 1) - 0.5) * 2, dy: (rand(k + 50) - 0.5) * 0.8, dr: (rand(k + 90) - 0.5) * 0.8 };
+    m.userData = { l: 0, dy: (rand(k + 50) - 0.5) * 0.8, dr: (rand(k + 90) - 0.5) * 0.8 };
     scene.add(m);
     cards.push(m);
   }
 
-  let target = 0, cur = 0, vel = 0, offX = 0, band = null;
-  const copy = root.querySelector(".gfloat__copy"), cta = root.querySelector(".gfloat__cta");
+  let target = 0, cur = 0, vel = 0, offX = 0, span = SPAN, turns = TURNS, travel = 8;
   ScrollTrigger.create({ trigger: root, start: "top top", end: () => `+=${innerHeight * 2.2}`, pin: true, onUpdate: (st) => (target = st.progress) });
   const resize = () => {
     const w = root.clientWidth, h = root.clientHeight;
@@ -313,12 +313,14 @@ function initGfloat() {
     camera.fov = 2 * Math.atan(viewW / camera.aspect / 2 / camera.position.z) * (180 / Math.PI);
     camera.updateProjectionMatrix();
     offX = camera.aspect < 1 ? 0 : 4; // a destra: a sinistra c'è il testo
-    // telefono: la spirale gira ferma nella fascia libera tra il testo in alto e il bottone in basso, senza passarci sopra
-    band = null;
-    if (camera.aspect < 1) {
-      const upp = viewW / camera.aspect / h, top = copy.offsetTop + copy.offsetHeight, bottom = cta.offsetTop;
-      band = { y: (h / 2 - (top + bottom) / 2) * upp, span: Math.max(1, ((bottom - top) * upp - H * 1.2) / 2) };
-    }
+    // la colonna di campioni è sempre più alta dello schermo per tutta la salita: niente vuoti sotto all'inizio né sopra
+    // alla fine. Sul telefono lo schermo è alto e stretto: colonna più lunga, con più campioni e più giri (stesso passo)
+    const viewH = viewW / camera.aspect;
+    travel = camera.aspect < 1 ? viewH * 0.4 : 8;
+    span = Math.max(SPAN, viewH / 2 + travel + H / 2);
+    turns = TURNS * span / SPAN;
+    const count = Math.min(N, Math.ceil(2 * span * DENS) + 1);
+    cards.forEach((m, k) => { m.visible = k < count; m.userData.l = (k / (count - 1) - 0.5) * 2; });
   };
   resize();
   addEventListener("resize", resize);
@@ -332,10 +334,9 @@ function initGfloat() {
     const a = cur * 2 - 1;
     cards.forEach((m) => {
       const { l, dy, dr } = m.userData;
-      const ang = l * TURNS * Math.PI - a * 0.9 * Math.PI;
+      const ang = l * turns * Math.PI - a * 0.9 * Math.PI;
       const r = R + dr;
-      const y = band ? band.y + l * band.span + dy * 0.4 : l * SPAN + dy - a * 8;
-      m.position.set(offX + r * Math.sin(ang), y, r * Math.cos(ang));
+      m.position.set(offX + r * Math.sin(ang), l * span + dy - a * travel, r * Math.cos(ang));
       m.material.uniforms.uShade.value = 0.5 + 0.5 * (0.5 + 0.5 * Math.cos(ang)); // dietro più scuri
     });
     renderer.render(scene, camera);
