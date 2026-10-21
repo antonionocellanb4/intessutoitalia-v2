@@ -234,8 +234,10 @@
 .config-banner--sofa { grid-template-columns: 1.15fr 1fr; align-items: stretch; }
 .config-banner--sofa .config-banner__text { align-content: center; }
 .sofa { position: relative; min-height: clamp(26rem, 38vw, 36rem); }
-/* la foto sfuma nella sabbia dal lato del testo */
-.sofa__photos { position: absolute; inset: 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%); mask-image: linear-gradient(90deg, transparent, #000 22%); }
+/* la foto sfuma nella sabbia dal lato del testo: velatura sopra la foto invece della maschera, che su iPhone Safari
+   poteva far sparire le foto (maschera + foto in dissolvenza) */
+.sofa__photos { position: absolute; inset: 0; }
+.sofa__photos::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, var(--c-sand), rgba(217, 209, 199, 0) 22%); }
 .sofa__photos img { position: absolute; inset: 0; object-position: 65% 60%; opacity: 0; transition: opacity 1s var(--ease); }
 .sofa__photos img.is-active { opacity: 1; }
 /* campionario: striscia bianca piena, il campione scelto si alza */
@@ -249,8 +251,8 @@
   .config-banner--sofa { grid-template-columns: 1fr; } /* la regola a due colonne qui sopra vinceva su quella generale per telefono */
   .sofa__swatches button { width: 2.4rem; height: 2.4rem; }
   .config-banner--sofa .config-banner__text { padding: 2.5rem 1.5rem 1.5rem; }
-  .sofa { min-height: 0; aspect-ratio: 4 / 3.4; }
-  .sofa__photos { -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%); mask-image: linear-gradient(180deg, transparent, #000 18%); }
+  .sofa { min-height: 0; height: clamp(17rem, 78vw, 26rem); } /* altezza esplicita: con aspect-ratio dentro la griglia Safari su iPhone la riduceva a zero */
+  .sofa__photos::after { background: linear-gradient(180deg, var(--c-sand), rgba(217, 209, 199, 0) 18%); }
   .sofa__strip { left: 1rem; right: 1rem; justify-content: space-between; padding-right: .9rem; }
   .sofa__swatches button { width: 2.25rem; height: 2.25rem; }
   .sofa__name { min-width: 0; font-size: 1rem; }
